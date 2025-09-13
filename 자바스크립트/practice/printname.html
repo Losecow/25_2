@@ -8,12 +8,21 @@
 <body>
     <h1>Javascript 입력 & 출력 연습</h1>
 
-    <p id="message">여기에 결과가 표시됩니다.</p>
+    <p id="message"> dkdkdkdkkd </p>
 
     <script>
-        let name = prompt("당신의 이름은 무엇입니까?");
+        let name = prompt("당신의 이름은 무엇입니까?", "박진우");
+
+        if(name=='박진우'){
+            alert("환영합니다");
+        }
+
 
         document.getElementById("message").innerHTML = `안녕하세요, ${name} 님! 환영합니다`;
+
+        let studentId=22100311;
+        
+        alert("당신의 학번은 : " + studentId + "\n당신의 이름은 : " + name + " 입니다.");
     </script>
 </body>
 </html>
