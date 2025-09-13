@@ -1,0 +1,24 @@
+TO
+{
+display: block;
+font-weight: bold;
+text-align: left;
+}
+
+FROM
+{
+display: block;
+font-weight: bold;
+text-align: left;
+}
+CONTENTS
+{
+display: block;
+color: blue;
+font-weight: bold;
+font-style: italic;
+text-align: left;
+margin-left: 15%;
+margin-top: 20px;
+}
+

@@ -1,0 +1,44 @@
+bookstore {
+
+}
+book {
+
+background-color: white;
+    display: block;
+    margin-bottom: 30pt;
+    margin-left: 20pt;
+    color: black;
+    text-align: left;
+}
+title {
+    background-color: lightblue;
+        display: block;
+    font-size: 30pt;
+    font-weight: bold;    
+    text-align:center;
+}
+author {
+    background-color: lightgray;
+    display: block;
+    color: blue;
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+
+year {
+    display: block;
+    color: red;
+    background-color: yellow;    
+    font-size: 20pt;
+        font-weight: bold;
+    font-family: verdana;
+}
+price {
+    display: block;
+    color: green;
+        background-color: lime;
+    font-size: 20pt;
+        font-weight: bold;
+    font-family: verdana;
+}

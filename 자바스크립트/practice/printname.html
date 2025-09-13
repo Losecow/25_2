@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 입력과 출력</title>
+</head>
+<body>
+    <h1>Javascript 입력 & 출력 연습</h1>
+
+    <p id="message">여기에 결과가 표시됩니다.</p>
+
+    <script>
+        let name = prompt("당신의 이름은 무엇입니까?");
+
+        document.getElementById("message").innerHTML = `안녕하세요, ${name} 님! 환영합니다`;
+    </script>
+</body>
+</html>
