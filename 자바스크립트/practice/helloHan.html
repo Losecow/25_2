@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hi">안녕! 한동이</h1>
+    <script>
+      document.getElementById("hi").innerHTML = "자바스크립트야 안녕!";
+    </script>
+    <h2 id="intro">안녕하세요</h2>
+    <script>
+      document.getElementById("intro").style.color = "blue";
+    </script>
+    <p class="text">영 번째</p>
+    <p class="text">첫 번째</p>
+    <p class="text">두 번째</p>
+    <script>
+      document.getElementsByClassName("text")[1].style.color = "red";
+      document.getElementsByTagName("p")[2].style.fontWeight = "bold";
+      document.querySelector(".text").style.color = "green";
+    </script>
+
+    <p class="item">첫 번째</p>
+    <p class="item">두 번째</p>
+    <p class="item">세 번째</p>
+    <script>
+      document.querySelectorAll(".item")[1].style.color = "red";
+    </script>
+  </body>
+</html>
