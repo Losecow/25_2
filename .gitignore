@@ -1,0 +1,122 @@
+# ===============================
+# Flutter/Dart
+# ===============================
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.fvm/
+
+# Flutter 빌드 산출물
+build/
+**/build/
+
+# 커버리지 리포트
+coverage/
+
+# Flutter 메타데이터(필수 아님)
+.metadata
+
+# 생성/임시 파일들
+**/Generated.xcconfig
+**/ephemeral/
+
+# ===============================
+# Android
+# ===============================
+android/.gradle/
+android/local.properties
+android/**/captures/
+android/**/outputs/apk/*
+android/**/outputs/bundle/*
+android/**/release/*
+
+# 서명 키(실서버 키는 절대 커밋 금지)
+*.keystore
+*.jks
+
+# Gradle Wrapper는 커밋 유지(무시 금지)
+!android/gradlew
+!android/gradlew.bat
+!android/gradle/wrapper/gradle-wrapper.jar
+!android/gradle/wrapper/gradle-wrapper.properties
+
+# ===============================
+# iOS / macOS (Xcode & CocoaPods)
+# ===============================
+**/Pods/
+**/.symlinks/
+**/DerivedData/
+**/xcuserdata/
+**/*.xcuserstate
+**/*.moved-aside
+**/*.pbxuser
+**/*.mode1v3
+**/*.mode2v3
+**/*.perspectivev3
+
+# Flutter iOS/macOS 생성물
+ios/Flutter/.last_build_id
+ios/Flutter/Flutter.framework
+ios/Flutter/App.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Runner/GeneratedPluginRegistrant.*
+
+macos/Flutter/ephemeral/
+macos/Flutter/Flutter.podspec
+macos/Flutter/GeneratedPluginRegistrant.*
+macos/Runner/GeneratedPluginRegistrant.*
+
+# SPM/Archive 산출물
+**/.build/
+**/*.ipa
+**/*.dSYM
+**/*.dSYM.zip
+
+# ===============================
+# Windows / Linux (Flutter)
+# ===============================
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+
+# ===============================
+# IDE / Editor
+# ===============================
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ===============================
+# macOS Finder & OS 잡파일
+# ===============================
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+.Spotlight-V100
+.Trashes
+._*
+
+# ===============================
+# Logs
+# ===============================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===============================
+# (선택) 비공개/민감 파일 — 필요 시 주석 해제
+# ===============================
+# ios/Runner/GoogleService-Info.plist
+# android/app/google-services.json
+# android/key.properties
+
+# ===============================
+# 참고
+# - pubspec.lock 은 앱 저장소에서는 보통 커밋 유지(무시 X)
+# - Podfile.lock 도 앱 저장소에서는 커밋 유지(무시 X)
