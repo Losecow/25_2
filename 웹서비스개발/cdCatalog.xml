@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="cd_catalog_basic.css" type="text/css"?>
+<catalog>
+    <cd>
+        <title>셔경미</title>
+        <artist>가나디</artist>
+        <country>Korea</country>
+        <company>USA</company>
+        <price>10₩</price>
+        <year>2002</year>
+    </cd>
+</catalog>

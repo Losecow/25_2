@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="euc-kr" standalone="yes"?>
+<?xml-stylesheet type="text/css" href="mail2.css"?>
+<mail>
+  <receiver>
+    <name>To</name>
+    <mail-address>iij@hanmail.net</mail-address>
+  </receiver>
+  <body>
+    <contents>Submit proposal.</contents>
+    <postscript>Due 5 pm.</postscript>
+    <attached-file>form.doc</attached-file>
+  </body>
+  <sender>
+    <name>Jane</name>
+    <mail-address>danny@goodnews.or.kr</mail-address>
+  </sender>
+</mail>

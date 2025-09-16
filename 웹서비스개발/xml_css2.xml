@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="euc-kr" standalone="yes"?>
+<?xml-stylesheet type="text/css" href="xml_css2.css"?>
+<xmlCssDemo>
+<title>
+<name>Hello World</name>
+</title>
+<paragraph>
+<contents>dkasjdsjakdj
+</contents>
+</paragraph>
+</xmlCssDemo>

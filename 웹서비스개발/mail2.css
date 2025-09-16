@@ -1,0 +1,21 @@
+receiver, sender, body {
+  display: block;
+}
+
+sender {
+  text-align: right;
+}
+
+name {
+    font-weight: bold;
+    background-color: yellow;
+}
+
+contents {
+  font-weight: bold;
+}
+
+
+mail-address, postscript, attached-file {
+  font-style: italic;
+}
