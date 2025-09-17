@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <img src="/Users/losecow/Desktop/25_2/자바스크립트/귀염가나디.png">
-</body>
+    <!-- external 방식으로 자바스크립트 경로 추가 -->
+    <script src="app20250916.js"></script>
+  </head>
+  <body>
+    <title>가나디 팬 페이지</title>
+
+    <style>
+      p {
+        color: crimson;
+        background-color: yellow;
+        text-align: center;
+        font-size: 40px;
+      }
+
+      .ganadi {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      button {
+        background-color: aqua;
+        display: block;
+        margin: auto;
+      }
+
+      p:hover {
+        background-color: darkblue;
+      }
+    </style>
+    <p>가나디 너무 귀여워!!!!!!</p>
+
+    <img
+      class="ganadi"
+      src="https://raw.githubusercontent.com/Losecow/snailosecow/f82952f9d375985f69f72549f1e937dba65ed674/%EA%BE%B8%EB%B2%85%EA%B0%80%EB%82%98%EB%94%94.png"
+      alt="꾸벅가나디"
+    />
+
+    <div></div>
+
+    <button onclick="alert('응 안돼')">가나디 입양하기</button>
+
+    <h1>듀벅듀벅.</h1>
+    <h1>듀벅듀벅.</h1>
+
+    <script>
+      document.querySelectorAll("h1")[0].style.color = "red";
+      document.querySelectorAll("h1")[1].style.color = "blue";
+      //   document.querySelectorAll("h1")[0].style.backgroundColor = "yellow";
+      //   document.querySelectorAll("h1")[1].style.backgroundColor = "blue";
+    </script>
+  </body>
 </html>
