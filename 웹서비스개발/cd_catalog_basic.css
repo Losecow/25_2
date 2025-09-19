@@ -1,0 +1,38 @@
+catalog {
+  background-color: white;
+  width: 100%;
+}
+cd {
+  display: block;
+  margin-bottom: 30pt;
+  margin-left: 0pt;
+  width: 300px;
+  height: 200px;
+  background: cyan;
+  border: 1px solid black;
+}
+
+title {
+  display: block;
+  color: red;
+  font-size: 20pt;
+}
+
+title:after {
+  content: " ₩00A7";
+}
+
+artist {
+  display: block;
+  color: #0000ff;
+  font-size: 20pt;
+}
+
+country,
+company,
+price,
+year {
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+}
