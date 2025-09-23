@@ -1,0 +1,95 @@
+catalog {
+  background-color: white;
+  width: 100%;
+}
+cd {
+  height: 200px;
+  width: 300px;
+  background: cyan;
+  border: 1px solid black;
+
+  display: block;
+  margin-bottom: 30pt;
+  margin-left: 0;
+  font-family: Arial, "Times New Roman", Times, serif;
+}
+
+title {
+  display: block;
+  color: #ff0000;
+  font-size: 20pt;
+}
+
+artist {
+  width: 100px;
+  height: 100px;
+  font-size: 20pt;
+  background: red;
+  position: relative;
+  -webkit-animation: myfirst 5s 2; /* Safari 4.0 - 8.0 */
+  -webkit-animation-direction: alternate; /* Safari 4.0 - 8.0 */
+  animation: myfirst 5s 2;
+  animation-direction: alternate;
+}
+@-webkit-keyframes myfirst {
+  0% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background: green;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+}
+@keyframes myfirst {
+  0% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background: green;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+}
+country,
+price,
+year,
+company {
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+}

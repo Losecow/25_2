@@ -1,0 +1,33 @@
+catalog {
+    background-color: white;
+    width: 100%;
+}
+cd {
+    display: block;
+    height: 200px;
+    width: 400px;
+
+    background: cyan;
+        border: 1px solid black;    
+    margin-bottom: 30pt;
+    margin-left: 0;
+}
+title {
+    display: block;
+    color: #ff0000;
+    font-size: 30pt;    
+    -ms-transform: skewX(20deg); /* IE 9 */
+    -webkit-transform: skewX(20deg); /* Safari */
+    transform: skewX(20deg);    
+  
+}
+artist {
+    display: block;
+    color: #0000ff;
+    font-size: 20pt;
+}
+country, price, year, company {
+    display: block;
+    color: #000000;
+    margin-left: 20pt;
+}

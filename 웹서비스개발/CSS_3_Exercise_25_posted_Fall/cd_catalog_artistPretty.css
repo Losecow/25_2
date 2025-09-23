@@ -1,0 +1,51 @@
+catalog {
+    background-color: white;
+    width: 100%;
+}
+cd {
+    height: 200px;
+    width: 300px;
+    background: cyan;
+        border: 1px solid black;
+
+    display: block;
+    margin-bottom: 30pt;
+    margin-left: 0;
+    font-family:Arial, "Times New Roman", Times, serif;
+    }
+
+title {
+    display: block;
+    color: #ff0000;
+    font-size: 20pt;
+}
+artist {
+    display: block;
+    color: #0000ff;
+    font-size: 20pt;
+}
+artist {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    from {left: 0px;}
+    to {left: 400px;}
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 400px;}
+}
+
+
+
+country, price, year, company {
+    display: block;
+    color: #000000;
+    margin-left: 20pt;
+}

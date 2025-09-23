@@ -1,0 +1,21 @@
+name {
+  display: block;
+  background-color: rgb(30, 144, 255);
+  margin-left: 5%;
+  margin-right: 70%;
+}
+
+div {
+  display: block;
+  background-color: rgb(255, 99, 71);
+  height: 90px;
+  width: 40px;
+  translate: 100px 20px;
+}
+
+contents {
+  display: block;
+  color: rgb(0, 0, 255);
+  margin-top: 5%;
+  margin-left: 5%;
+}

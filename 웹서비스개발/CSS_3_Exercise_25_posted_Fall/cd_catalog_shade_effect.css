@@ -1,0 +1,37 @@
+catalog {
+  background-color: white;
+  width: 100%;
+}
+cd {
+  position: relative;
+  height: 200px;
+  width: 500px;
+  background: cyan;
+  border: 1px solid black;
+  display: block;
+  margin-bottom: 30pt;
+  margin-left: 0;
+  font-family: Arial, "Times New Roman", Times, serif;
+}
+
+title {
+  display: block;
+  color: blue;
+  font-size: 30pt;
+  text-shadow: 10px 10px 3px red;
+}
+
+artist {
+  display: block;
+  color: #0000ff;
+  font-size: 20pt;
+}
+
+country,
+price,
+year,
+company {
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+}
