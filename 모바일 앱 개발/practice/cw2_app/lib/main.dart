@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const String appTitle = 'Flutter layout demo';
     return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+      ),
       title: appTitle,
       home: Scaffold(
         //         appBar: AppBar(title: const Text(appTitle)),
@@ -82,8 +85,10 @@ class ButtonSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color color = Theme.of(context).primaryColor;
-    return SizedBox(
+    final Color color = Colors.black;
+    //  return SizedBox(
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
