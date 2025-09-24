@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <style>
+      body {
+        text-align: center;
+
+        font-family: sans-serif;
+
+        display: grid;
+
+        place-items: center;
+
+        /* grid레이아웃 place-items = align-items + justify-items */
+
+        height: 100vh;
+
+        background-color: #000;
+      }
+
+      div {
+        background: #fff;
+
+        padding: 2rem;
+
+        border-radius: 1rem;
+
+        width: 14rem;
+
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <p id="colorText">컬러 코드 검색</p>
+
+      <!-- 색상선택팝업창 -->
+      <input id="colorPicker" type="color" />
+    </div>
+
+    <script>
+      // 스크립트 내에서 아무 이벤트 없이 존재하는 코드는 웹 로딩시 한번 실행 후 끝
+      // 재로딩 되게 어떻게 해야할까?
+      // 선택 되는 이벤트 -> 배경 바뀜 작업 연결해야함
+      // 이벤트리스너연결(이벤트 , 할일)
+      // () => {}
+      const text = document.querySelector("#colorText");
+      const color = document.getElementById("colorPicker");
+      const colorBg = () => {
+        document.body.style.backgroundColor = color.value;
+      };
+      const colorTx = () => {
+        text.style.color = color.value;
+      };
+      color.addEventListener("input", colorBg);
+      color.addEventListener("input", colorTx);
+    </script>
+  </body>
+</html>

@@ -5,5 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <h1 id="st">공부하세요</h1>
+    <h1>가나디똥가나디</h1>
+    <script>
+      document.getElementById("st").style.color = "red";
+      document.getElementsByTagName("h1")[0].style.backgroundColor = "yellow";
+      document.getElementsByTagName("h1")[1].style.backgroundColor = "brown";
+    </script>
+
+    <ul>
+      <li class="flist">가나디</li>
+      <li class="flist">바나나가나디</li>
+      <li class="flist">복복가나디</li>
+    </ul>
+
+    <ol>
+      <li class="flist">가나디</li>
+      <li class="flist">바나나가나디</li>
+      <li class="flist">복복가나디</li>
+    </ol>
+
+    <script>
+      // .flist 클래스 가진 두 번째 요소의 내용을 바꿈
+      document.querySelectorAll(".flist")[1].innerHTML = "망고가나디";
+      document.querySelectorAll(".flist")[1].innerHTML =
+        '<a href= "https://kr.pinterest.com/pin/676806650284778322/">망고가나디</a>';
+    </script>
+
+    <script>
+      // 작은 따옴표를 바깥 기호로
+
+      //   alert("가나디의 문단속");
+    </script>
+  </body>
 </html>
