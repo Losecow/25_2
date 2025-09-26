@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="euc-kr" standalone="yes"?>
+<!DOCTYPE note [
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+<note>
+<to>Tom</to>
+<from>Jane</from>
+<heading>Reminder</heading>
+<body>Lunch Meeting Today at 2 PM</body>
+</note>
