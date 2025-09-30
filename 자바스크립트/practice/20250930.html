@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h3 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>흰둥이의 사탕 나눔</h1>
+    <hr />
+    <h2>친구가 받은 사창의 수: <span id="numCandy"></span> 개</h2>
+    <h3>남은 사탕의 수: <span id="mod"></span>개</h3>
+
+    <script>
+      const candy = 15;
+      const person = 4;
+
+      document.getElementById("numCandy").innerHTML = parseInt(candy / person);
+      document.getElementById("mod").innerHTML = candy % person;
+    </script>
+  </body>
+</html>

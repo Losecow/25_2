@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>즉흥적 새벽 두시 콘서트</h1>
+    <h1>입장 여부 확인</h1>
+    <script>
+      let age = prompt("Age of Handong (As Integer)");
+      let ticket = confirm("Do you have the ticket? (Y/N)");
+
+      let result = "";
+
+      if ((age > 18) & (ticket == true)) {
+        alert("Confirmed.");
+        // document.getElementsByTagName("h1")[1].innerHTML='입장 가능';
+        result = "입장 가능";
+      } else {
+        alert("Unconfirmed");
+        // document.getElementsByTagName("h1")[1].innerHTML='입장 가능...겠냐?';
+        result = "입장 가능...겠냐?";
+      }
+      document.getElementsByTagName("h1")[1].innerHTML = result;
+    </script>
+  </body>
+</html>
