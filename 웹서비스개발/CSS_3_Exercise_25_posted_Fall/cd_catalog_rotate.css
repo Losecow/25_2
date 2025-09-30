@@ -88,22 +88,38 @@ cd {
 
   /* background: cyan; */
   /* border: 1px solid black; */
-  margin-bottom: 30pt;
-  margin-left: 0;
+  margin-bottom: 160pt;
+  /* margin-left: 0; */
+  margin-top: 30px;
 }
 title {
   display: block;
   color: #ff0000;
-  font-size: 30pt;
-  -ms-transform: skewX(20deg); /* IE 9 */
-  -webkit-transform: skewX(20deg); /* Safari */
-  transform: skewX(20deg);
+  font-size: 25pt;
+  height: 50px;
+  /* -ms-transform: skewX(20deg); */
+  /* -webkit-transform: skewX(20deg); */
+  /* transform: skewX(20deg); */
+  border: 5px dotted blue;
+  margin-bottom: 10px;
+  /* transition -> hover 로 변하는 데 걸리는 시간 */
 }
+
+title::after {
+  margin-left: 5px;
+  content: "\00A7";
+}
+
 artist {
-  display: block;
+  /* display: block; */
+  display: inline-block;
   color: #0000ff;
   font-size: 20pt;
-  transform: skewY(20deg);
+  /* transform: skewY(20deg); */
+  background-color: lightgray;
+  /* width: 30%; */
+  height: 40px;
+  margin-bottom: 10px;
 }
 country,
 price,
@@ -112,6 +128,8 @@ company {
   display: block;
   color: #000000;
   margin-left: 20pt;
+  margin-bottom: 10px;
+  /* text-align: right; */
 }
 
 company {
@@ -121,8 +139,38 @@ company {
   display: block;
   color: #000000;
   margin-left: 20pt;
-  -webkit-transition: width 2s;
-  transition: width 2s;
+  /* -webkit-transition: width 2s; */
+  transition: width 5s;
+  border: 3px dotted black;
+  animation: myfirst 5s 2;
+}
+
+@keyframes myfirst {
+  0% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background: green;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background: red;
+    left: 0px;
+    top: 0px;
+  }
 }
 
 company:hover {
@@ -135,7 +183,7 @@ year {
   display: block;
   background: cyan;
   margin-left: 20pt;
-  -webkit-transition: width 2s, height 4s; /* Safari */
+  /* -webkit-transition: width 2s, height 4s; Safari */
   transition: width 2s, height 4s;
 }
 
@@ -151,14 +199,15 @@ price {
   display: block;
   color: #000000;
   margin-left: 20pt;
-  -webkit-transition: width 3s; /* Safari */
-  -webkit-transition-delay: 1s; /* Safari */
+  /* -webkit-transition: width 3s; Safari */
+  /* -webkit-transition-delay: 1s; Safari */
   transition: width 3s;
   transition-delay: 1s;
 }
 
 price:hover {
   width: 300px;
+  border: 5px solid black;
 }
 
 country {
@@ -168,13 +217,17 @@ country {
   color: yellow;
   margin-left: 20pt;
   background: purple;
-  -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
-  transition: width 2s, height 2s, transform 2s;
+  /* -webkit-transition: width 2s, height 2s, -webkit-transform 2s; Safari */
+  transition: width 2s, height 2s, transform 1s, background-color 1s;
+  /* transition -> 어떤 속성이 바뀔 때 몇 초에 걸쳐 일어날지를 정의 */
+  /* transition-delay: 5s; */
 }
 
 country:hover {
   width: 200px;
   height: 100px;
-  -webkit-transform: rotate(180deg); /* Safari */
+  /* -webkit-transform: rotate(180deg);  */
   transform: rotate(180deg);
+  border: 5px double red;
+  background-color: red;
 }

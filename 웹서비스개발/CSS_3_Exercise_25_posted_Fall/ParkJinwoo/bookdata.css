@@ -1,0 +1,194 @@
+Library {
+  background-color: white;
+  width: 100%;
+}
+
+Book {
+  display: block;
+  height: 200px;
+  width: 400px;
+  margin-bottom: 160pt;
+  margin-top: 30px;
+}
+
+title {
+  position: relative;
+  left: 0px;
+  display: block;
+  color: #ff0000;
+  font-size: 25pt;
+  height: 50px;
+  border: 5px dotted blue;
+  margin-bottom: 10px;
+  transition: margin-left 2s, background-color 2s, font-size 2s, left 2s;
+}
+
+title:hover {
+  background-color: #0000ff;
+  color: yellow;
+  border: 4px double black;
+  left: 200px;
+  font-size: 30pt;
+}
+
+KorTitle {
+  display: none;
+}
+
+title:active + KorTitle {
+  display: block;
+  text-align: end;
+}
+
+author {
+  display: block;
+  color: #0000ff;
+  font-size: 20pt;
+  background-color: lightgray;
+  width: 50%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+DOB {
+  display: none;
+}
+
+author:hover + DOB {
+  display: block;
+  color: purple;
+  margin-left: 300px;
+  border: 2px dashed darkgreen;
+  animation: date 5s infinite;
+  transform: skew(270deg);
+}
+
+@keyframes date {
+  0% {
+  }
+  50% {
+    transform: skew(0deg);
+    border: 5px solid red;
+  }
+  100% {
+  }
+}
+
+company,
+price,
+Synopsis {
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+country {
+  width: 100px;
+  height: 50px;
+  display: block;
+  color: yellow;
+  margin-left: 20pt;
+  background: purple;
+  transition: width 2s, height 2s, background-color 1s, color 1s, transform 3s,
+    font-size 1s;
+}
+
+home {
+  display: none;
+  color: red;
+}
+
+country:hover {
+  width: 120px;
+  height: 80px;
+  font-size: 16pt;
+  background-color: lightgray;
+  color: purple;
+  transform: skewY(180deg);
+}
+
+country:active + home {
+  display: block;
+  text-align: right;
+}
+
+company {
+  width: 100px;
+  height: 50px;
+  background: yellow;
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+  transition: margin-left 1s, background-color 2s;
+  border: 2px dotted purple;
+  box-shadow: 10px 10px 10px blue;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: 400px;
+    width: 150px;
+    height: 80px;
+    background-color: lightgray;
+    margin-left: 300px;
+    font-weight: bold;
+    font-size: 26pt;
+    color: darkgreen;
+    border: 2px dashed red;
+    box-shadow: 10px 10px 10px red;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+price {
+  width: 100px;
+  height: 50px;
+  background: lightgray;
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+  transition: width 2s, height 2s;
+  box-shadow: 10px 10px 10px darkgreen;
+}
+
+price:hover {
+  width: 150px;
+  height: 70px;
+  color: blue;
+  text-shadow: 8px 8px 2px purple;
+  box-shadow: 10px 10px yellow;
+  text-align: center;
+  font-size: 25px;
+}
+
+Synopsis {
+  width: 100px;
+  height: 50px;
+  display: block;
+  background: cyan;
+  margin-left: 20pt;
+  transition: width 2s, height 4s;
+}
+
+Synopsis:hover {
+  width: 200px;
+  height: 100px;
+}
+
+Kortitle {
+  display: block;
+  color: white;
+}
+
+Kortitle:active {
+  color: blue;
+  color: black;
+}
