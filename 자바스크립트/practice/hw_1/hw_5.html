@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>한동대 login</h1>
+    <h2 id="result" , style="color: blue">가나디귀여워</h2>
+    <script>
+      let savedId = "handongY";
+      let savedPw = "2250001";
+
+      let userId = prompt("id를 입력하세요.");
+      let userPw = prompt("password를 입력하세요.");
+
+      if (userId == savedId && userPw == savedPw) {
+        document.getElementById("result").innerHTML = `${userId}님 반갑습니다.`;
+      } else {
+        document.getElementById(
+          "result"
+        ).innerHTML = `입력한 id와 pw가 틀렸습니다: id-${userId} pw-${userPw}`;
+      }
+    </script>
+  </body>
+</html>
