@@ -5,5 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      let num1 = Number(prompt("첫 번째 숫자를 입력:"));
+      let operator = prompt("연산자(+,-,*,/) 입력:");
+      let num2 = Number(prompt("두 번째 숫자를 입력:"));
+
+      let result;
+
+      switch (operator) {
+        case "+":
+          result = num1 + num2;
+          break;
+        case "-":
+          result = num1 - num2;
+          break;
+
+        case "*":
+          result = num1 * num2;
+          break;
+
+        case "/":
+          result = num1 / num2;
+          break;
+
+        default:
+          alert("연산결과:없는 연산입니다.");
+          result = undefined;
+      }
+
+      if (result !== undefined) {
+        alert(`연산결과: ${result}`);
+      }
+    </script>
+  </body>
 </html>

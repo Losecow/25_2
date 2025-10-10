@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="memoEntity.css"?>
+<!DOCTYPE myMessage [
+    <!ELEMENT myMessage ( message )>
+    <!ELEMENT message ( #PCDATA )>
+    <!ENTITY myEntityA "Entity Value A">
+    <!ATTLIST message id CDATA #REQUIRED>
+    <!ATTLIST message number CDATA #IMPLIED>
+]>
+
+<myMessage>
+    <message id = "445" number = "123">
+        Welcome to XML! &myEntityA;
+    </message>
+</myMessage>

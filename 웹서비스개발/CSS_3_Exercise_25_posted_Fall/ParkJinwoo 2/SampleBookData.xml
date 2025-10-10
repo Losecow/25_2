@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type = "text/css" href = "bookdata.css"?>
+<Library>
+  <Book>
+    <title>War and Peace</title>
+    <KorTitle>전쟁과 평화</KorTitle>
+    <author>Leo Tolstoy</author>
+    <DOB>1828, Sep. 9 ~ 1910, Nov. 20</DOB>
+    <country>Nationality</country>
+    <home>Russia</home>
+    <company>Kyobo</company>
+    <price>6,930</price>
+    <Synopsis>Synopsis</Synopsis>
+    <contents>The book chronicles the French invasion of Russia 
+      and its aftermath ...</contents>
+  </Book>
+  <Book>
+    <title>The Divine Comedy</title>
+    <KorTitle>단테의 신곡</KorTitle>
+    <author>Dante Alighieri</author>
+    <DOB>May 1265 – September 14, 1321</DOB>
+    <country>Nationality</country>
+    <home>Italian</home>
+    <company>Amazon</company>
+    <price>10,800</price>
+    <Synopsis>Synopsis</Synopsis>
+      <contents>It consists of three parts: Inferno, Purgatorio, and Paradiso. 
+      ...</contents>
+  </Book>
+</Library>

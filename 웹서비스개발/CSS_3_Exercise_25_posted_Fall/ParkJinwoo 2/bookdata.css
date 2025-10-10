@@ -1,0 +1,135 @@
+Library {
+  background-color: white;
+  width: 100%;
+}
+
+Book {
+  display: block;
+  height: 200px;
+  width: 400px;
+  margin-bottom: 160pt;
+  margin-top: 30px;
+}
+
+title {
+  display: block;
+  color: #ff0000;
+  font-size: 25pt;
+  height: 50px;
+  border: 5px dotted blue;
+  margin-bottom: 10px;
+  transition: margin-left 2s, background-color 2s;
+}
+
+title:hover {
+  background-color: #0000ff;
+  color: orange;
+  border: 2px double black;
+  margin-left: 200px;
+}
+
+author {
+  display: block;
+  color: #0000ff;
+  font-size: 20pt;
+  background-color: lightgray;
+  width: 60%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+aSelector:active author {
+  color: blue;
+}
+
+company,
+price,
+Synopsis {
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+country {
+  width: 100px;
+  height: 50px;
+  display: block;
+  color: yellow;
+  margin-left: 20pt;
+  background: purple;
+  transition: width 2s, height 2s, transform 1s, background-color 1s, color 1s,
+    transform 3s, font-size 1s;
+}
+
+country:hover {
+  width: 200px;
+  height: 100px;
+  font-size: 16pt;
+  background-color: lightgray;
+  color: purple;
+  transform: skewY(360deg);
+}
+
+company {
+  width: 100px;
+  height: 50px;
+  background: yellow;
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+  transition: margin-left 1s, background-color 2s;
+  border: 2px dotted purple;
+  animation: myfirst 5s 2;
+}
+
+company:hover {
+  background-color: lightgray;
+  margin-left: 300px;
+  font-weight: bold;
+  font-size: 16pt;
+  color: darkgreen;
+  border: 2px solid red;
+}
+
+price {
+  width: 100px;
+  height: 50px;
+  background: lightgray;
+  display: block;
+  color: #000000;
+  margin-left: 20pt;
+  transition: width 2s, height 2s;
+}
+
+price:hover {
+  width: 150px;
+  height: 70px;
+  color: blue;
+  text-shadow: 8px 8px 2px purple;
+}
+
+Synopsis {
+  width: 100px;
+  height: 50px;
+  display: block;
+  background: cyan;
+  margin-left: 20pt;
+  transition: width 2s, height 4s;
+}
+
+Synopsis:hover {
+  width: 200px;
+  height: 100px;
+}
+
+Kortitle {
+  display: block;
+  color: white;
+}
+
+Kortitle:active {
+  color: blue;
+  color: black;
+}
