@@ -7,34 +7,43 @@
   </head>
   <body>
     <script>
-      let num1 = Number(prompt("첫 번째 숫자를 입력:"));
+      // 첫 번째 숫자 입력받아 num1 변수에 저장
+      let num1 = Number(prompt("첫 번째 숫자 입력:"));
+      // 연산자 입력받아 operator 변수에 저장
       let operator = prompt("연산자(+,-,*,/) 입력:");
-      let num2 = Number(prompt("두 번째 숫자를 입력:"));
+      // 두 번째 숫자 입력받아 num2 변수에 저장
+      let num2 = Number(prompt("두 번째 숫자 입력:"));
 
+      // result 변수 선언
       let result;
 
+      // operator 변수의 값에 따라 분기
       switch (operator) {
+        // operator가 +일 경우 덧셈 실행
         case "+":
           result = num1 + num2;
           break;
+        // operator가 -일 경우 뺄셈 실행
         case "-":
           result = num1 - num2;
           break;
-
+        // operator가 *일 경우 곱셈 실행
         case "*":
           result = num1 * num2;
           break;
-
+        // operator가 /일 경우 나눗셈 실행
         case "/":
           result = num1 / num2;
           break;
-
+        // 해당하는 연산자가 없을 경우 알림창 출력 후 result에 undefined 할당
         default:
           alert("연산결과:없는 연산입니다.");
           result = undefined;
       }
 
+      // result가 undefined가 아닌지 확인
       if (result !== undefined) {
+        // 조건이 참일 경우 결과값을 알림창으로 출력
         alert(`연산결과: ${result}`);
       }
     </script>

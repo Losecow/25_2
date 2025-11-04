@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="result">99단</p>
+    <script>
+      let i = Number(prompt("2~9 사이의 값을 입력하세요."));
+
+      if (i < 2 || i > 9) {
+        alert("입력오류");
+      } else {
+        let result = "";
+        for (let j = 1; j < 10; j++) {
+          result += i + " * " + j + " = " + i * j + "<br>";
+        }
+
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

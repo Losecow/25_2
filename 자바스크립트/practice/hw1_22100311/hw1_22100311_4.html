@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>3개의 수 중에서 가장 큰 수:</h1>
+    <br />
+    <h1 id="result">가나디귀여워</h1>
+    <!-- ID가 result인 h1 요소를 생성 -->
+
+    <script>
+      // 첫 번째 수를 입력받아 num1 변수에 저장
+      let num1 = Number(prompt("첫 번째 수를 입력하세요:"));
+      // 두 번째 수를 입력받아 num2 변수에 저장
+      let num2 = Number(prompt("두 번째 수를 입력하세요:"));
+      // 세 번째 수를 입력받아 num3 변수에 저장
+      let num3 = Number(prompt("세 번째 수를 입력하세요:"));
+
+      // maxName 변수 선언 후 문자열 num1 할당
+      let maxName = "num1";
+      // maxValue 변수 선언 후 num1 값 할당
+      let maxValue = num1;
+
+      // num2가 maxValue보다 큰지 확인
+      if (num2 > maxValue) {
+        // maxValue를 num2 값으로 재할당
+        maxValue = num2;
+        // maxName을 문자열 num2로 재할당
+        maxName = "num2";
+      }
+
+      // num3이 maxValue보다 큰지 확인
+      if (num3 > maxValue) {
+        // maxValue를 num3 값으로 재할당
+        maxValue = num3;
+        // maxName을 문자열 num3로 재할당
+        maxName = "num3";
+      }
+
+      // result ID를 가진 요소의 내용을 결과 문자열로 변경
+      document.getElementById(
+        "result"
+      ).innerHTML = `${maxName}의 숫자 ${maxValue}이(가) 가장 큽니다.`;
+    </script>
+  </body>
+</html>

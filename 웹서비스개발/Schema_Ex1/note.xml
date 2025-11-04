@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<note xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="note.xsd">
+<to> Eugene </to>
+<from> Brown </from>
+<heading> Dinner Appointment </heading>
+<body> 6 PM at Pine Hill</body>
+</note>

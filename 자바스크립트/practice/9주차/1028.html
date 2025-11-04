@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>구구단</h1>
+    <p id="gugudan">결과출력</p>
+    <script>
+      // prompt 2개 num1, num2 저장, num1 > num2 인 경우 반복문 실행 안됨
+      // dan = num1, jul = num2 이 되게 for문 작성
+      // num1 이 구구단 시작숫자, num2 가 구구단 끝숫자
+
+      let num1 = parseInt(prompt("첫 번째 숫자를 입력하세요:"));
+      let num2 = parseInt(prompt("두 번째 숫자를 입력하세요:"));
+
+      if (num1 > num2) {
+        alert("첫 번째 숫자가 두 번째 숫자보다 큽니다.");
+      } else {
+        let result = "";
+        for (let dan = num1; dan <= num2; dan++) {
+          for (let jul = 1; jul <= 9; jul++) {
+            result += `${dan} x ${jul} = ${dan * jul}<br>`;
+          }
+          result += "<br>"; // 단이 바뀔 때마다 줄 바꿈 추가
+        }
+        document.getElementById("gugudan").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

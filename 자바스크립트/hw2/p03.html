@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="result_area">
+      <h3 id="list_title"></h3>
+      <p id="num_list"></p>
+      <h3 id="max_value_output"></h3>
+    </div>
+
+    <script>
+      const arr = []; // 숫자를 저장할 배열
+      let run = true; // 반복 제어 변수
+
+      // 사용자 입력 반복 시작
+      while (run) {
+        const input = prompt("숫자를 입력하세요.\n입력 종료- end");
+
+        // 입력 종료 조건 확인
+        if (input === "end") {
+          alert("입력을 종료하였습니다.");
+          run = false;
+        }
+        // 예외 입력 처리
+        else {
+          const num = Number(input);
+
+          // 유효한 숫자인지 검사
+          if (input === "" || num != num) {
+            // 예외 처리: 입력 오류 경고
+            alert("입력 오류 입니다.\n다시 입력하세요");
+          } else {
+            // 유효한 숫자인 경우
+            arr[arr.length] = num;
+          }
+        }
+      }
+
+      // 결과 출력을 위한 HTML 요소
+      const title = document.getElementById("list_title");
+      const list = document.getElementById("num_list");
+      const max = document.getElementById("max_value_output");
+
+      if (arr.length > 0) {
+        // 목록 제목
+        title.textContent = "입력한 숫자의 목록";
+
+        // 사용자 입력 숫자 목록
+        let listStr = "";
+        for (let i = 0; i < arr.length; i++) {
+          listStr += arr[i];
+          if (i < arr.length - 1) {
+            listStr += ", ";
+          } else {
+            listStr += ",";
+          }
+        }
+
+        // 목록 <p> 태그 내용 설정
+        list.textContent = listStr;
+
+        // 가장 큰 수 찾기 및 출력
+        let maxValue = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] > maxValue) {
+            // 현재 배열 요소가 현재까지의 최대값보다 크면
+            maxValue = arr[i]; // 최대값 갱신
+          }
+        }
+
+        // 가장 큰 수 출력 <h3> 태그 내용 변경
+        max.textContent = `가장 큰 수: ${maxValue}`;
+      } else {
+        // 입력된 숫자가 없을 경우 처리
+        title.textContent = "입력된 숫자가 없습니다.";
+        list.textContent = "";
+        max.textContent = "";
+      }
+    </script>
+  </body>
+</html>

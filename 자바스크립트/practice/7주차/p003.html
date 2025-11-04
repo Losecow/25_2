@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="result"></p>
+
+    <script>
+      let i = Number(prompt("숫자를 입력하세요."));
+
+      let j = 0;
+      let result = "";
+      while (j <= i) {
+        if (j < i) {
+          result += j + ", ";
+        } else {
+          result += j;
+        }
+        j++;
+      }
+      document.getElementById("result").innerHTML = result;
+    </script>
+  </body>
+</html>

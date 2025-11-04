@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Colspan Rowspan 2:1 비율 예제</title>
+    <style>
+      /* [1] 기본 테이블 스타일 */
+      table {
+        border-collapse: collapse;
+        width: 90%;
+        margin: 20px auto;
+      }
+      th,
+      td {
+        border: 2px solid #333;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+      }
+      /* [2] 영역별 색상 및 너비 설정 */
+      .row-span-cell {
+        background-color: #cceeff; /* Rowspan 영역 */
+        width: 15%; /* Rowspan 영역의 너비 설정 */
+      }
+      .col-2 {
+        background-color: #ffcccc;
+      } /* Colspan 4 영역 (2 비율) */
+      .col-1 {
+        background-color: #ccffcc;
+      } /* Colspan 2 영역 (1 비율) */
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th rowspan="3" class="row-span-cell">
+          A. 3개 행 병합<br />(rowspan="3")
+        </th>
+
+        <th colspan="4" class="col-2">B. 4개 열 병합 (2 비율)</th>
+
+        <th colspan="2" class="col-1">C. 2개 열 병합 (1 비율)</th>
+      </tr>
+
+      <tr>
+        <td>D-1</td>
+        <td>D-2</td>
+        <td>D-3</td>
+        <td>D-4</td>
+        <td>D-5</td>
+        <td>D-6</td>
+      </tr>
+
+      <tr>
+        <td colspan="2" class="col-span">E. 2열 병합</td>
+
+        <td>F-1</td>
+        <td>F-2</td>
+        <td>F-3</td>
+        <td>F-4</td>
+      </tr>
+    </table>
+  </body>
+</html>

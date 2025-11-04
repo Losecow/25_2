@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>한동이 계산기</h1>
+    <h3>계산결과: <span id="result" , style="color: red"> </span></h3>
+    <!-- ID가 result이고 글씨 색이 빨간색인 span 요소를 생성 후 h3 태그로 감싸 일부분만 수정 가능하게 함 -->
+
+    <script>
+      // 첫 번째 숫자를 입력받아 num1 변수에 저장
+      let num1 = Number(prompt("첫 번째 숫자 입력:"));
+      // 두 번째 숫자를 입력받아 num2 변수에 저장
+      let num2 = Number(prompt("두 번째 숫자 입력:"));
+
+      // result ID 요소의 내용을 사칙연산 결과 문자열로 변경
+      document.getElementById("result").innerHTML = `${num1}+${num2} = ${
+        num1 + num2
+      } / ${num1}-${num2} = ${num1 - num2} / ${num1}*${num2} = ${
+        num1 * num2
+      } / ${num1}/${num2} = ${Math.floor(num1 / num2)} / ${num1}%${num2} = ${
+        num1 % num2
+      }`;
+    </script>
+  </body>
+</html>

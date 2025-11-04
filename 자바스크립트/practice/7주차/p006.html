@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="result">1 ~ 1000</p>
+
+    <script>
+      let num;
+      while (1) {
+        num = Number(prompt("1 ~ 1000 사이의 숫자를 입력하세요."));
+        if (num < 1 || num > 1000) {
+          alert("다시 입력하세요");
+        } else break;
+      }
+
+      //   document.write(num);
+
+      let result = "";
+
+      for (let i = 1; i < 1001; i++) {
+        if (i % 10) result += i + ", ";
+        else {
+          result += i;
+          result += "<br>";
+        }
+
+        if (i == num) break;
+      }
+
+      document.getElementById("result").innerHTML = result;
+    </script>
+  </body>
+</html>

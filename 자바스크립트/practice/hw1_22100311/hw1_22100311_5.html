@@ -8,16 +8,25 @@
   <body>
     <h1>한동대 login</h1>
     <h2 id="result" , style="color: blue">가나디귀여워</h2>
+    <!-- ID가 result이고 글씨 색이 파란색인 h2 요소를 생성 -->
+
     <script>
+      // savedId 변수 선언 후 값 handongY 할당
       let savedId = "handongY";
+      // savedPw 변수 선언 후 값 2250001 할당
       let savedPw = "2250001";
 
-      let userId = prompt("id를 입력하세요.");
-      let userPw = prompt("password를 입력하세요.");
+      // 사용자로부터 ID 입력받아 userId 변수에 저장
+      let userId = prompt("id를 입력하세요:");
+      // 사용자로부터 PW 입력받아 userPw 변수에 저장
+      let userPw = prompt("password를 입력하세요:");
 
+      // userId와 savedId가 같고 userPw와 savedPw가 같은지 확인
       if (userId == savedId && userPw == savedPw) {
+        // 조건이 참일 경우 result ID 요소의 내용을 환영 메시지로 변경
         document.getElementById("result").innerHTML = `${userId}님 반갑습니다.`;
       } else {
+        // 조건이 거짓일 경우 result ID 요소의 내용을 오류 메시지로 변경
         document.getElementById(
           "result"
         ).innerHTML = `입력한 id와 pw가 틀렸습니다: id-${userId} pw-${userPw}`;

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<member xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="member.xsd">
+  <lastname></lastname>
+  <age>6</age>
+  <dateborn>1970-03-27</dateborn>
+</member>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="result"></div>
+
+    <script>
+      // 사용자 입력 (사용자 입력이 항상 유효한 숫자라고 가정)
+      const startStr = prompt("시작 숫자를 입력하세요");
+      const endStr = prompt("마지막 숫자를 입력하세요");
+
+      // 입력값을 정수로 변환
+      const startNum = parseInt(startStr);
+      const endNum = parseInt(endStr);
+
+      // 변수 선언
+      let total = 0;
+      let sum = 0;
+      let count = 0;
+
+      // n과 k 사이에 있는 정수의 합을 계산
+      for (let i = startNum; i <= endNum; i++) {
+        total += i;
+        count++;
+
+        // 짝수 확인
+        if (i % 2 === 0) {
+          sum += i;
+        }
+      }
+
+      // 평균 계산
+      const average = total / count;
+
+      // 출력
+      const output = document.getElementById("result");
+      let result = "";
+
+      // 전체 합계 출력 (<h1>, <h2> 태그)
+      result += `<h1>${startNum}부터 ${endNum}까지의 합</h1> <h2 class="red">합계:${total}</h2> `;
+
+      // 부분 합계 (짝수의 합) 출력 (<h1>, <h2> 태그)
+      result += `<h1>짝수의 합</h1> <h2 class="blue">짝수 합계:${sum}</h2> `;
+
+      // 평균 출력 (<h2> 태그)
+      result += `<h2>평균:${average}</h2> `;
+
+      // 값 전달
+      output.innerHTML = result;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3></h3>
+
+    <script>
+      // 1부터 100까지 출력
+      // // 홀수는 blue, 짝수는 red
+
+      document.write("for");
+      for (let i = 0; i <= 100; i++) {
+        if (!(i % 2)) {
+          document.write("<h3 style='color:red'>" + i + "</h3>");
+        } else {
+          document.write("<h3 style='color:blue'>" + i + "</h3>");
+        }
+      }
+      document.write("While");
+
+      let j = 0;
+      while (1) {
+        if (!(j % 2)) {
+          document.write("<h3 style='color:red'>" + j + "</h3>");
+        } else {
+          document.write("<h3 style='color:blue'>" + j + "</h3>");
+        }
+        j++;
+
+        if (j == 101) break;
+      }
+    </script>
+  </body>
+</html>

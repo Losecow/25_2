@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="todo">
+  <xs:complexType>
+     <xs:sequence>
+        <xs:element name="task" type="xs:string"/>
+        <xs:element name="status" type="xs:string"/>
+        <xs:element name="priority" type="xs:decimal"/>
+     </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

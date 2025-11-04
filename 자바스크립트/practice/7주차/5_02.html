@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>for 문 예제</title>
   </head>
   <body>
+    <h2>10까지 카운트다운</h2>
     <script>
-      let originNum = 3;
-      let inputNum = +prompt("숫자를 입력하세요.");
-
-      if (originNum === inputNum) {
-        alert("갑습니다.");
+      for (let i = 10; i > -1; i--) {
+        document.write("카운트다운: " + i + "<br>");
       }
     </script>
   </body>

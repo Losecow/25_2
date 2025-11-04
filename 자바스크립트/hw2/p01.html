@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="arr_content"></p>
+    <h3 id="max_val"></h3>
+
+    <script>
+      // 과제에서 주어진 배열
+      const data = [1, 22, 45, 8, 10, 7, 19, 3, 29, 11];
+
+      // 배열의 내용을 문자열로 변환 + 배열:
+      let arrText = "배열:";
+
+      // 문자열 만드는 반복문
+      for (let i = 0; i < data.length; i++) {
+        // 문자열에 문자 추가
+        arrText += data[i];
+        // 마지막 요소가 아닐 경우에만 쉼표를 추가
+        if (i < data.length - 1) {
+          arrText += ",";
+        }
+      }
+
+      // 배열 내용을 출력합니다.
+      document.getElementById("arr_content").textContent = arrText;
+
+      // 배열의 첫 번째 값을 초기 최대값으로
+      let maxValue = data[0];
+
+      // 배열 요소 반복하면서 최대값 찾는 반복문
+      for (let i = 1; i < data.length; i++) {
+        // data[i]가 maxValue보다 큰지 비교
+        if (data[i] > maxValue) {
+          // maxValue가 더 크면, maxValue를 data[i]로 갱신
+          maxValue = data[i];
+        }
+      }
+
+      // 가장 큰 수를 문자열로
+      const resultText = "가장 큰 수:" + maxValue;
+      // ID가 max_val인 요소를 찾아 출력
+      document.getElementById("max_val").textContent = resultText;
+    </script>
+  </body>
+</html>

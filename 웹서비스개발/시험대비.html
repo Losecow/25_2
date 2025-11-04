@@ -1,0 +1,162 @@
+<!-- 기본 구조	<table>	테이블 전체를 정의
+<tr>	Table Row (테이블 행)을 정의
+<th>	Table Header (테이블 제목/머리글) 셀을 정의
+<td>	Table Data (테이블 데이터) 셀을 정의
+의미론적 그룹	<caption>	테이블의 제목(캡션)을 정의
+<thead>	테이블의 머리글(헤더) 행 그룹을 정의
+<tbody>	테이블의 본문(데이터) 행 그룹을 정의
+<tfoot>	테이블의 바닥글(푸터) 행 그룹을 정의 -->
+
+<!-- colspan="N": 현재 셀이 가로(열)로 N개의 셀을 병합하도록 지정합니다.
+rowspan="N": 현재 셀이 세로(행)로 N개의 셀을 병합하도록 지정합니다. -->
+
+<style>
+    table {
+        width: 40%;
+        border-collapse: collapse;
+    }
+</style>
+
+<table border="1">
+  <caption>
+    <strong>가격 정보</strong>
+  </caption>
+  <thead>
+    <tr>
+      <th>항목</th>
+      <th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>사과</td>
+      <td>$0.25</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>총합</th>
+      <td>$3.75</td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- Pseudo Class -->
+
+<!-- 
+:hover	마우스 포인터가 요소 위에 올라와 있을 때	가장 많이 사용되며, advanced.html, dropdown.html 파일에서 동적인 효과를 구현하는 핵심입니다.
+:active	요소가 사용자에게 의해 활성화(클릭되거나 눌린) 되었을 때	버튼이나 링크를 클릭하는 순간의 스타일 변경
+:link	방문하지 않은 하이퍼링크에 적용	기본 링크 색상 설정
+:visited	이미 방문한 하이퍼링크에 적용	방문한 링크의 색상 변경
+:focus	요소가 포커스를 받았을 때 (예: 폼 입력 필드)	입력창 클릭 시 테두리 색상 변경 -->
+
+<!-- 
+/* 1. 기본적으로 메뉴 아이템들을 숨깁니다. */
+div.menu a {
+    display: none; /* 메뉴 항목 숨김 */
+}
+
+/* 2. 부모 요소에 마우스를 올렸을 때 숨겨진 자식 요소를 보이게 합니다. */
+div.menu:hover a {
+    display: block; /* 또는 inline 등 */
+}
+
+/* 3. 메뉴 항목 자체에 마우스를 올렸을 때 스타일을 변경합니다. */
+div.menu a:hover {
+    background-color: #dfeeff;
+} -->
+
+<!DOCTYPE html>
+   <head>
+      <title>
+         Drop-Down Menu
+      </title>
+      <style type = "text/css">
+         body              { font-family: arial, sans-serif }
+         div.menu          { font-weight: bold;
+                             color: white;
+                             border: 2px solid #225599;
+                             text-align: center;
+                             width: 10em;
+                             background-color: #225599 }
+         div.menu:hover a  { display: block }
+         div.menu a        { display: none;
+                             border-top: 2px solid #225599;
+                             background-color: white;
+                             width: 10em;
+                             text-decoration: none;
+                             color: black }
+         div.menu a:hover  { background-color: #dfeeff }
+      </style>
+   </head>
+   <body>
+      <div class = "menu">Menu
+         <a href = "#">Home</a>
+         <a href = "#">News</a>
+         <a href = "#">Articles</a>
+         <a href = "#">Blog</a>
+         <a href = "#">Contact</a>
+      </div>
+   </body>
+</html>
+
+<!DOCTYPE html>
+   <head>
+      <title>
+         Drop-Down Menu
+      </title>
+      <style type = "text/css">
+body          { font-family: arial, sans-serif }
+div.menu1     { font-weight: bold;
+                color: red;
+                border: 2px solid blue;
+                text-align: center;
+                width: 20em;
+                background-color: cyan }
+div.menu1:hover a { display: inline }
+div.menu1 a   { display: none;
+                border-top: 4px solid purple;
+                background-color: white;
+                width: 10em;
+                text-decoration: none;
+                color: black }
+div.menu1 a:hover { background-color: yellow }
+</style>
+   </head>
+   <body>
+      <div class = "menu1">Menu
+         <a href = "#">Home</a>
+         <a href = "#">News</a>
+         <a href = "#">Articles</a>
+         <a href = "#">Blog</a>
+         <a href = "#">Contact</a>
+      </div>
+
+
+      <p id="demo">바뀌기 전 내용입니다.</p>
+      <p id="demo1">사라지는 내용입니다.</p>
+      <p id="demo2" style="display:none">나타나는 내용입니다.</p>
+      
+      <button type="button"
+      onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>
+      Click Me!
+    </button>
+
+    <br><br>
+
+    <button type="button"
+      onclick='document.getElementById("demo1").style.display = "none"'>
+      Click Me to Hide Text
+    </button>
+
+    <br><br>
+    <button type="button"
+      onclick='document.getElementById("demo2").style.display = "block"'>
+      Click Me to Show Text
+
+   </body>
+</html>
+
+
+
+

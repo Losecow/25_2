@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      .a {
+        font-size: 200%;
+        font-weight: bold;
+        border-style: solid;
+        border-color: rgb(78, 10, 237);
+        border-width: 5px;
+      }
+
+      div.a:hover {
+        background-color: yellow;
+        color: red;
+        font-size: 300%;
+        border-style: solid;
+        border-color: purple;
+        border-width: 3px;
+      }
+
+      .name {
+        color: rgb(0, 124, 35);
+        text-align: center;
+        font-weight: bold;
+      }
+
+      div.name:hover {
+        background-color: gray;
+        font-size: 200%;
+        border-style: solid;
+        border-color: purple;
+        border-width: 3px;
+      }
+      .address {
+        color: rgb(127, 4, 109);
+        text-align: center;
+        font-weight: bold;
+      }
+      div.address:hover {
+        background-color: yellow;
+        color: blue;
+        font-size: 200%;
+        font-style: italic;
+      }
+      .phone {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .phoneblock {
+        border-style: dashed;
+        border-color: rgb(127, 4, 109);
+        border-width: 5px;
+      }
+
+      p {
+        font-size: 150%;
+        font-weight: bold;
+        color: blue;
+      }
+
+      h2 {
+        font-size: 250%;
+        font-weight: bold;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Employ Data</h2>
+
+    <!-- <p>Use the CSS border-style property to set the style of the borders.</p> -->
+    <p>Use "Base Table" for this table</p>
+
+    <table style="width: 100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td colspan="2"><div class="a">Jill Smith</div></td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td><div class="name">Name</div></td>
+        <td>
+          <div class="address">Address</div>
+        </td>
+        <td class="phone">Phone</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td class="phoneblock" id="phone" rowspan="2">
+          <span>No Phone #</span>
+        </td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+    </table>
+
+    <br /><br />
+
+    <button
+      type="button"
+      onclick='document.getElementById("phone").style.backgroundColor = "skyblue";
+              document.getElementById("phone").style.color = "red";
+              document.getElementById("phone").innerHTML = "Not Available"'
+    >
+      Click Me to Change Phone Entry
+    </button>
+
+    <br /><br />
+
+    <button
+      type="button"
+      onclick='document.getElementById("phone").innerHTML = "No Phone #"
+      document.getElementById("phone").style.color = "black";
+      document.getElementById("phone").style.backgroundColor = "white";'
+    >
+      Click Me to Restore Phone Entry
+    </button>
+  </body>
+</html>
