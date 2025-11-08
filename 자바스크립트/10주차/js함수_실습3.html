@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>구구단출력<br></p>
+    <script>
+        // 사용자에게 구구단을 단 숫자를 입력받고 그 단 전체를 출력하는 프로그램 작성
+        // inputTimes() 함수: 사용자가 end를 입력하면 Goodbye알림을 화면에 출력하고 종료, end가 입력되기 전까지 무한반복하며 사용자로부터 입력을 받아 p태그에 결과 출력
+        // 사용자의 입력이 2~9사이가 아니면 알림창 메시지 출력
+        // printTimes() 함수: 구구단의 출력을 생성하여 inputTimes()에게 반환 Ex) 2를 받으면 2단 내용을 생성하여 반환
+        function printTimes(number){
+            let result=number+"단<br>";
+            for(let i=1;i<10;i++) {
+                result+=`${number}*${i}=${(number*i)}<br>`;
+            }
+        }
+        inputTimes();
+    </script>
+</body>
+</html>

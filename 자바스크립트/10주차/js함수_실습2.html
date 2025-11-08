@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="printavg">평균:</h1>
+    <script>
+      // 사용자에게 두 개의 수를 입력받고 평균을 출력하는 프로그램을 작성
+      // 문제 1. 두 개의 수를 입력받고 평균을 계산하는 부분과 평균을 <h1>태그에 출력하는 부분을 각각 별도의 함수로 만들어라
+      // 첫번째 함수에서 평균을 return으로 받고, 두번째 함수에 이 값을 argument로 전달하라
+      // 문제 2. 입력받은 점수도 출력하는 코드 추가하라
+      // html에서는 입력값 표시를 담당할 새로운 h1을 추가하고, script에서는 기존의 printAvg 함수 안에서 그 일을 추가 수행하도록 하라
+      // 평균 출력 시 소수점 이하 3자리까지만 출력하라
+      function avgScore() {
+        let score1 = Number(prompt("첫 번째 점수를 입력하세요:"));
+        let score2 = Number(prompt("두 번째 점수를 입력하세요:"));
+        let avg = (score1 + score2) / 2;
+        return { average: avg, first: score1, second: score2 };
+      }
+
+      function printAvg(avgObj) {
+        let avgRounded = avgObj.average.toFixed(3);
+        document.getElementById("printavg").innerText = "평균: " + avgRounded;
+
+        let scoreDisplay = document.createElement("h1");
+        scoreDisplay.innerText =
+          "입력한 점수: " + avgObj.first + ", " + avgObj.second;
+        document.body.appendChild(scoreDisplay);
+      }
+
+      let tempAvg = avgScore();
+      printAvg(tempAvg);
+    </script>
+  </body>
+</html>

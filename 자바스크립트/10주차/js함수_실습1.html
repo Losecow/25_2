@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 웹페이지가 로딩되면 프로그램 개발자의 이름과 이메일을 alert으로 출력하는 함수
+      // 문제 1. 이를 이름과 이메일을 prompt로 입력받아서 출력하도록 수정하라
+      // 단,  prompt()는 printAuthor()함수 외부에서 사용 후 printAuthor() 함수에 파라미터로 전달하라
+      // 문제 2. 문제 1의 코드를 함수로 만들고, 개발자 이름과 이메일을 return 하도록 하여라
+      // 함수의 return으로 받은 값을 printAuthor()로 전달하여라\
+
+      function inputInfo() {
+        let devName = prompt("개발자 이름을 입력하세요:");
+        let devEmail = prompt("개발자 이메일을 입력하세요:");
+
+        return [devName, devEmail];
+      }
+
+      function printAuthor(name, email) {
+        alert("개발자: " + name + "\n이메일: " + email);
+      }
+      let devArray = inputInfo();
+      printAuthor(devArray[0], devArray[1]);
+    </script>
+  </body>
+</html>
+
+</html>
