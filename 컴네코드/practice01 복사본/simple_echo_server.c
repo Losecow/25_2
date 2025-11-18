@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	}
 	
 	// TODO: socket()
-	serv_sock = socket();
+	serv_sock = socket(PF_INET, SOCK_STREAM, 0);
 	if (serv_sock == -1)
 		error_handling("socket() error");
 
@@ -34,30 +34,30 @@ int main(int argc, char *argv[])
 	serv_adr.sin_port = htons(atoi(argv[1]));
 
 	// TODO: bind()
-	if (bind())
+	if (bind(serv_sock, (struct sockaddr*)&serv_adr, sizeof(serv_adr)) == -1)
 		error_handling("bind() error");
 		
 	printf("Server Listen...\n");
 
 	// TODO: listen()
-	if (listen())
+	if (listen(serv_sock, 5) == -1)
 		error_handling("listen() error");
 	
 	clnt_adr_sz = sizeof(clnt_adr);
  	// TODO: accept()
-	clnt_sock = accept();
+	clnt_sock = accept(serv_sock, (struct sockaddr*)&clnt_adr, &clnt_adr_sz);
 	if (clnt_sock == -1)
 		error_handling("accept() error");
 	else
 		puts("Client is connected!");
 	
 	// TODO: read message from client
-	while ((str_len = read()) != 0)
+	while ((str_len = read(clnt_sock, message, BUF_SIZE)) != 0)
 	{
 		message[str_len] = 0;
 		printf("Client's message: %s", message);
 		// TODO: write message to client 
-		write();
+		write(clnt_sock, message, str_len);
 	}
 
 	close(clnt_sock);

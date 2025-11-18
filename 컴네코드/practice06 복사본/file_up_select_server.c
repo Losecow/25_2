@@ -44,7 +44,9 @@ int main(int argc, char *argv[])
 		error_handling("listen() error");
 
 	// TODO: init descriptor 
-
+	FD_ZERO(&reads);
+	FD_SET(serv_sock, &reads);
+	fd_max = serv_sock;
 
 	for (i = 0; i < MAX_CONN; i++)
 		read_first[i] = 1;		
@@ -54,20 +56,28 @@ int main(int argc, char *argv[])
 		cpy_reads = reads;
 
 		// TODO: set timeer
+		timeout.tv_sec = 5;
+		timeout.tv_usec = 5000;
 
 		// TODO: select()
+		if ((fd_num = select(fd_max+1, &cpy_reads, 0, 0, &timeout)) == -1)
+			break;
 		
 		if (fd_num == 0)
 			continue; 
 
 		for (i = 0; i < fd_max + 1; i++)
 		{
-			if ()// TODO: check file descriptor
+			if (FD_ISSET(i, &cpy_reads))// TODO: check file descriptor
 			{
 				if (i == serv_sock)		// connection request! 
 				{
 					// TODO: when connecion request 
-					
+					adr_sz = sizeof(clnt_adr);
+					clnt_sock = accept(serv_sock, (struct sockaddr*)&clnt_adr, &adr_sz);
+					FD_SET(clnt_sock, &reads);
+					if (fd_max < clnt_sock)
+						fd_max = clnt_sock;
 
 					printf("Connected client IP(%d): %s \n", i, inet_ntoa(clnt_adr.sin_addr)); 
 					read_first[i] = 1;
@@ -83,6 +93,7 @@ int main(int argc, char *argv[])
 				else					// read file data 
 				{
 					// TODO: read file data 
+					read_cnt = read(i, buf, BUF_SIZE);
 
 					if (read_cnt == 0)	// close request!
 					{
@@ -90,6 +101,9 @@ int main(int argc, char *argv[])
 						write(i, "Thank you", 10);
 
 						// TODO: when connection close (send "Thank you" message to client)
+						FD_CLR(i, &reads);
+						fclose(fp[i]);
+						close(i);
 						
 						printf("Closed client: %d \n", i);
 						read_first[i] = 1;
@@ -97,6 +111,7 @@ int main(int argc, char *argv[])
 					else 
 					{
 						// TODO: write data into file
+						fwrite(buf, 1, read_cnt, fp[i]);
 					}
 				}
 			}

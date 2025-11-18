@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
 	host_name = argv[1];
 
 	// TODO: Get IP address and copy to ip_addr (char array)
-	host = gethostbyname();
+	host = gethostbyname(host_name);
 	if (!host)
 		error_handling("gethost... error");
 
-	strcpy(ip_addr, ... );
+	strcpy(ip_addr, inet_ntoa(*(struct in_addr*)host->h_addr_list[0]));
 
 	// ip_addr is string for IP address 
 	printf("IP addr: %s \n", ip_addr); 
@@ -45,9 +45,9 @@ int main(int argc, char *argv[])
 	memset(&serv_adr, 0, sizeof(serv_adr));
 	
 	// TODO: Set server address 
-	serv_adr.
-	serv_adr. 
-	serv_adr. 
+	serv_adr.sin_family = AF_INET;
+	serv_adr.sin_addr.s_addr = inet_addr(ip_addr);
+	serv_adr.sin_port = htons(PORT);
 	
 	if (connect(sock, (struct sockaddr*)&serv_adr, sizeof(serv_adr)) == -1)
 		error_handling("connect() error!");
@@ -59,11 +59,11 @@ int main(int argc, char *argv[])
 	printf("Client HTTP Message: \n%s", buf);
 	
 	// TODO: Transmit HTTP message to server 
-	write();
+	write(sock, buf, strlen(buf));
 
 	// Receive HTTP Response message from server 
 	memset(buf, 0, strlen(buf));
-	while (recv_cnt = read(sock, buf, BUF_SIZE-1) > 0) {
+	while ((recv_cnt = read(sock, buf, BUF_SIZE-1)) > 0) {
 		printf("%s", buf);
 	}
 	printf("\nComplete \n");

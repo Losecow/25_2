@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
 	fgets(message, BUF_SIZE, stdin);
 
 	// TODO: write message to server 
-	write();
+	write(sock, message, strlen(message));
 	// TODO: read message from server 
-	str_len = read();
+	str_len = read(sock, message, BUF_SIZE-1);
 	message[str_len]=0;
 	printf("Message from server: %s", message);
 	

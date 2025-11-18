@@ -42,7 +42,8 @@ int main(int argc, char *argv[])
 		clnt_sd = accept(serv_sd, (struct sockaddr*)&clnt_adr, &clnt_adr_sz);	
 
 		// TODO: pthread_create & detach 
-
+		pthread_create(&thread, NULL, handle_client, (void*)&clnt_sd);
+		pthread_detach(thread);
 
 		printf("Connected client IP(sock=%d): %s \n", clnt_sd, inet_ntoa(clnt_adr.sin_addr));
 	}
@@ -54,7 +55,38 @@ int main(int argc, char *argv[])
 void *handle_client(void *arg)
 {
 	// TODO: file receiving 
+	int clnt_sd = *((int*)arg);
+	FILE *fp;
+	char file_name[FILE_LEN];
+	char buf[BUF_SIZE];
+	int read_cnt;
 	
+	// Receive file name
+	read(clnt_sd, file_name, FILE_LEN);
+	
+	// Open file with received file name
+	fp = fopen(file_name, "wb");
+	if (fp == NULL)
+	{
+		close(clnt_sd);
+		return NULL;
+	}
+	
+	printf("Received File name: %s \n", file_name);
+	
+	// Receive file data from client
+	while ((read_cnt = read(clnt_sd, buf, BUF_SIZE)) != 0)
+	{
+		fwrite(buf, 1, read_cnt, fp);
+	}
+	
+	printf("Complete!: %s \n", file_name);
+	
+	// Send complete message to client
+	write(clnt_sd, "Thank you", 10);
+	
+	fclose(fp);
+	close(clnt_sd);
 	return NULL;
 }
 
