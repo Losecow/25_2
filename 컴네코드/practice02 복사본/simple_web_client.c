@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	if (!host)
 		error_handling("gethost... error");
 
-	strcpy(ip_addr, inet_ntoa(*(struct in_addr*)host->h_addr_list[0]));
+	strcpy(ip_addr, inet_ntop(AF_INET, host->h_addr_list[0], ip_addr, INET_ADDRSTRLEN));
 
 	// ip_addr is string for IP address 
 	printf("IP addr: %s \n", ip_addr); 

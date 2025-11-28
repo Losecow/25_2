@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 {
 	int serv_sock, clnt_sock;
 	struct sockaddr_in serv_adr, clnt_adr;
-	socklen_t clnt_adr_size;
+	int clnt_adr_size;
 	int optlen, option;
 	char buf[BUF_SIZE];
 	pthread_t t_id;	
@@ -90,8 +90,7 @@ int* request_handler(void *arg)
 	 }
 
 	fclose(clnt_read);
-	send_data(clnt_write, ct, file_name);
-	return NULL;
+	send_data(clnt_write, ct, file_name); 
 }
 
 void send_data(FILE* fp, char* ct, char* file_name)
