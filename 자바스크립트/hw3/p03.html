@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P03. 배열과 함수2</title>
+    <style>
+      button {
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>색상 버튼 생성 프로그램</h1>
+    <div id="buttonContainer"></div>
+
+    <script>
+      const validColors = [
+        "red",
+        "yellow",
+        "blue",
+        "green",
+        "black",
+        "white",
+        "gray",
+        "pink",
+        "magenta",
+        "cyan",
+      ];
+      let colorArray = [];
+
+      function inputColor() {
+        const colorList = validColors.join(",");
+
+        while (true) {
+          const input = prompt("색상 이름을 입력하세요.\n" + colorList);
+
+          // 취소 버튼을 누른 경우
+          if (input === null) {
+            break;
+          }
+
+          const trimmedInput = input.trim().toLowerCase();
+
+          // 'end' 입력 시 종료
+          if (trimmedInput === "end") {
+            break;
+          }
+
+          // 유효한 색상인지 확인
+          if (validColors.includes(trimmedInput)) {
+            // 이미 입력된 색상인지 확인
+            if (!colorArray.includes(trimmedInput)) {
+              colorArray.push(trimmedInput);
+              // 10가지 색상을 모두 입력한 경우 종료
+              if (colorArray.length === validColors.length) {
+                break;
+              }
+            } else {
+              alert("이미 입력된 색상입니다. 다시 입력하세요.");
+            }
+          } else {
+            // 입력 오류 예외 처리
+            alert("색상 이름이 틀렸습니다. 다시 입력하세요.");
+          }
+        }
+      }
+
+      function printColor() {
+        const container = document.getElementById("buttonContainer");
+        container.innerHTML = ""; // 기존 내용 초기화
+
+        colorArray.forEach((color) => {
+          const button = document.createElement("button");
+          button.textContent = color;
+          button.style.backgroundColor = color;
+          // 검은색과 어두운 색상의 경우 텍스트 색상을 흰색으로
+          if (color === "black" || color === "blue" || color === "green") {
+            button.style.color = "white";
+          }
+          container.appendChild(button);
+        });
+      }
+
+      // 함수 호출
+      inputColor();
+      printColor();
+    </script>
+  </body>
+</html>
