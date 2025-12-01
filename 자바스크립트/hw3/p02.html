@@ -27,59 +27,73 @@
     <button id="alignButton">가운데정렬</button>
 
     <script>
+      // n x n 크기의 별표(*) 패턴을 생성하는 함수
       function printAsterisk(n) {
-        let result = "";
+        let result = ""; // 결과 문자열 초기화
+
+        // n개의 행 생성
         for (let i = 0; i < n; i++) {
+          // 각 행에 n개의 별표 추가
           for (let j = 0; j < n; j++) {
-            result += "*";
+            result += "*"; // 별표 문자 추가
           }
-          result += "<br>";
+          result += "<br>"; // 행이 끝나면 줄바꿈 태그 추가
         }
-        return result;
+        return result; // 완성된 HTML 문자열 반환
       }
 
+      // 입력 버튼 클릭 이벤트 리스너 등록
       document
         .getElementById("btnInput")
         .addEventListener("click", function () {
-          const input = document.getElementById("inTag");
-          const inputValue = input.value.trim();
-          const output = document.getElementById("print");
+          // HTML 요소 찾아서 변수에 저장
+          const input = document.getElementById("inTag"); // 입력 필드
+          const inputValue = input.value.trim(); // 입력값에서 앞뒤 공백 제거
+          const output = document.getElementById("print"); // 출력 영역
 
-          // 숫자가 아닌 경우 예외처리
+          // 입력값 유효성 검사: 숫자가 아니거나 빈 문자열인 경우
           if (
             isNaN(inputValue) ||
             inputValue === "" ||
             isNaN(Number(inputValue))
           ) {
+            // 오류 메시지 표시
             alert("숫자가 아닌 값 입니다. 다시 입력하세요");
-            input.value = ""; // Input 태그의 입력 창 초기화
-            output.innerHTML = "*를 출력";
-            return;
+            input.value = ""; // 입력 필드 초기화
+            output.innerHTML = "*를 출력"; // 출력 영역을 기본 텍스트로 복원
+            return; // 함수 실행 중단
           }
 
+          // 입력값을 숫자로 변환하여 별표 패턴 생성 및 출력
           const num = Number(inputValue);
-          output.innerHTML = printAsterisk(num);
-          output.style.textAlign = "left"; // 초기 정렬은 왼쪽
-          input.value = ""; // 출력 후 입력 창 초기화
+          output.innerHTML = printAsterisk(num); // 생성된 별표 패턴을 HTML로 출력
+          output.style.textAlign = "left"; // 정렬을 왼쪽으로 초기화
+          input.value = ""; // 출력 후 입력 필드 초기화
         });
 
-      // 정렬 버튼 이벤트
+      // 정렬 버튼 관련 HTML 요소 참조
       const output = document.getElementById("print");
       const alignButton = document.getElementById("alignButton");
 
-      // 초기 정렬은 왼쪽
+      // 페이지 로드 시 초기 정렬을 왼쪽으로 설정
       output.style.textAlign = "left";
 
+      // 정렬 버튼 클릭 이벤트 리스너 등록
       alignButton.addEventListener("click", function () {
+        // 현재 버튼의 텍스트 내용 확인
         const currentText = alignButton.textContent;
 
+        // 버튼 텍스트에 따라 정렬 방식과 버튼 텍스트를 변경
         if (currentText === "가운데정렬") {
+          // 가운데 정렬로 변경하고 버튼 텍스트를 "오른쪽 정렬"로 변경
           output.style.textAlign = "center";
           alignButton.textContent = "오른쪽 정렬";
         } else if (currentText === "오른쪽 정렬") {
+          // 오른쪽 정렬로 변경하고 버튼 텍스트를 "왼쪽 정렬"로 변경
           output.style.textAlign = "right";
           alignButton.textContent = "왼쪽 정렬";
         } else if (currentText === "왼쪽 정렬") {
+          // 왼쪽 정렬로 변경하고 버튼 텍스트를 "가운데정렬"로 변경
           output.style.textAlign = "left";
           alignButton.textContent = "가운데정렬";
         }
