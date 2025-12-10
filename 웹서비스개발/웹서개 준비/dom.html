@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM All-in-One Example</title>
+    <style>
+      body {
+        font-family: Arial;
+        margin: 20px;
+        line-height: 1.7;
+      }
+      h2 {
+        margin-top: 40px;
+        color: #333;
+      }
+      #animateBox {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+      }
+      #container {
+        width: 400px;
+        height: 200px;
+        background-color: yellow;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM All-in-One Example</h1>
+    <p>DOM PDF의 모든 기능을 한 파일에 모아서 만든 통합 예제입니다.</p>
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 1. getElementById / innerHTML -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>1. getElementById + innerHTML 변경하기</h2>
+    <p id="p1">원래 텍스트</p>
+    <button onclick="document.getElementById('p1').innerHTML='텍스트 변경됨!'">
+      텍스트 바꾸기
+    </button>
+    <!-- PDF page 7, 20 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 2. getElementsByTagName -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>2. getElementsByTagName</h2>
+    <p>첫 번째 문단</p>
+    <p>두 번째 문단</p>
+    <p id="tagResult"></p>
+
+    <button onclick="showTagName()">첫 번째 p 태그 내용 보여주기</button>
+
+    <script>
+      function showTagName() {
+        const elements = document.getElementsByTagName("p");
+        document.getElementById("tagResult").innerHTML =
+          "첫 번째 p 태그: " + elements[0].innerHTML;
+      }
+    </script>
+    <!-- PDF page 10, 21 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 3. getElementsByClassName -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>3. getElementsByClassName</h2>
+    <p class="intro">Hello World (class=intro)</p>
+    <p class="intro">두 번째 intro 요소</p>
+    <p id="classResult"></p>
+
+    <button onclick="showClassName()">class='intro' 첫 요소 출력</button>
+
+    <script>
+      function showClassName() {
+        const items = document.getElementsByClassName("intro");
+        document.getElementById("classResult").innerHTML =
+          "intro의 첫 요소: " + items[0].innerHTML;
+      }
+    </script>
+    <!-- PDF page 11~13 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 4. 스타일 변경 (element.style.property) -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>4. 스타일 변경</h2>
+    <h3 id="styleText">이 텍스트 색을 바꿔보자</h3>
+    <button onclick="document.getElementById('styleText').style.color='red'">
+      빨간색으로 변경
+    </button>
+    <!-- PDF page 7, 16 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 5. setAttribute() -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>5. setAttribute()</h2>
+    <a id="myLink" href="https://www.google.com">기존 링크</a><br /><br />
+    <button
+      onclick="document.getElementById('myLink').setAttribute('href','https://www.w3schools.com')"
+    >
+      링크를 W3Schools로 변경하기
+    </button>
+    <!-- PDF page 15 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 6. createElement / appendChild -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>6. createElement & appendChild</h2>
+    <div id="createArea"></div>
+    <button onclick="addParagraph()">문단 하나 추가하기</button>
+
+    <script>
+      function addParagraph() {
+        const p = document.createElement("p");
+        p.innerHTML = "새로 추가된 문단";
+        document.getElementById("createArea").appendChild(p);
+      }
+    </script>
+    <!-- PDF page 17 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 7. onclick 이벤트 -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>7. onclick 이벤트</h2>
+    <h3 onclick="this.innerHTML='클릭됨!'">클릭하면 바뀌는 텍스트</h3>
+    <!-- PDF page 14, 15 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 8. 이벤트 핸들러 할당 (DOM 방식) -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>8. DOM으로 이벤트 핸들러 등록</h2>
+    <button id="eventBtn">현재 시간 보여주기</button>
+    <p id="timeResult"></p>
+
+    <script>
+      document.getElementById("eventBtn").onclick = function () {
+        document.getElementById("timeResult").innerHTML = Date();
+      };
+    </script>
+    <!-- PDF page 17 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 9. onload 이벤트 -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>9. onload 이벤트</h2>
+    <p id="onloadText"></p>
+
+    <script>
+      window.onload = function () {
+        document.getElementById("onloadText").innerHTML =
+          "페이지가 로드되었습니다!";
+      };
+    </script>
+    <!-- PDF page 18 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 10. onchange 이벤트 -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>10. onchange 이벤트</h2>
+    <input type="text" id="upperInput" onchange="toUpperCaseText()" />
+    <p>입력 후 focus를 벗어나면 대문자로 변환됨</p>
+
+    <script>
+      function toUpperCaseText() {
+        const x = document.getElementById("upperInput");
+        x.value = x.value.toUpperCase();
+      }
+    </script>
+    <!-- PDF page 20 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 11. onmouseover / onmouseout -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>11. onmouseover / onmouseout</h2>
+    <div
+      onmouseover="this.innerHTML='감사합니다'"
+      onmouseout="this.innerHTML='마우스 올려보세요'"
+      style="
+        background-color: #d94a38;
+        width: 200px;
+        height: 40px;
+        padding: 20px;
+      "
+    >
+      마우스 올려보세요
+    </div>
+    <!-- PDF page 24 참고 -->
+
+    <!-- ------------------------------------------------------------ -->
+    <!-- 12. 간단한 애니메이션 -->
+    <!-- ------------------------------------------------------------ -->
+    <h2>12. 애니메이션</h2>
+    <button onclick="moveBox()">박스 움직이기</button>
+
+    <div id="container">
+      <div id="animateBox"></div>
+    </div>
+
+    <script>
+      function moveBox() {
+        let pos = 0;
+        const elem = document.getElementById("animateBox");
+        const id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos >= 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.left = pos + "px";
+            elem.style.top = pos / 2 + "px";
+          }
+        }
+      }
+    </script>
+    <!-- PDF page 9~12 참고 -->
+  </body>
+</html>

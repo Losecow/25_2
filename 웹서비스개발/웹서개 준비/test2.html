@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러 함수 호출 테스트</title>
+</head>
+<body>
+    <h1>여러 함수 호출 테스트</h1>
+    
+    <button onclick="makeBold(); changeColor(); changeSize(); changeText();">
+        클릭하면 여러 변화
+    </button>
+
+    <p id="myP">원래 텍스트</p>
+
+    <script>
+        function makeBold() {
+            document.getElementById("myP").style.fontWeight = "bold";
+        }
+
+        function changeColor() {
+            document.getElementById("myP").style.color = "darkblue";
+        }
+
+        function changeSize() {
+            document.getElementById("myP").style.fontSize = "40px";
+        }
+
+        function changeText() {
+            document.getElementById("myP").innerHTML = "내용이 변경되었습니다!";
+        }
+    </script>
+</body>
+</html>
+
+

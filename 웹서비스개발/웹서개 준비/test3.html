@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dom HTTP Exercise</title>
+  </head>
+  <body>
+    <h2>Dom HTTP Exercise</h2>
+    <!-- 버튼: AJAX로 텍스트 로드 -->
+    <button onclick="loadText()">Loading with XMLHttpRequest</button>
+
+    <h3>Event Driven Program with XMLHttpRequest</h3>
+    <p>Testing Moverover Event Event</p>
+    <!-- 마우스오버 영역 -->
+    <div
+      id="hoverBox"
+      style="
+        width: 200px;
+        height: 80px;
+        background: red;
+        padding: 20px;
+        color: blue;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      Mouse Over Me
+    </div>
+    <script>
+      // AJAX로 텍스트 파일 불러오기
+      function loadText() {
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function () {
+          if (req.readyState == 4 && req.status == 200) {
+            var hoverBox = document.getElementById("hoverBox");
+            hoverBox.style.background = "yellow";
+            hoverBox.innerHTML = req.responseText;
+          }
+        };
+        // 로컬 파일 또는 서버 파일
+        req.open("GET", "message.txt", true);
+        req.send();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AJAX All-in-One Example</title>
+    <style>
+      body {
+        font-family: Arial;
+        line-height: 1.7;
+        margin: 20px;
+      }
+      h2 {
+        margin-top: 40px;
+        color: #222;
+      }
+      .box {
+        padding: 10px;
+        border: 1px solid #bbb;
+        margin-top: 10px;
+      }
+      table {
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      td,
+      th {
+        border: 1px solid #444;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AJAX All-in-One (시험용 정리)</h1>
+    <p>AJAX PDF의 모든 예제 + 개념을 하나로 통합</p>
+
+    <!-- ================================================================= -->
+    <!-- 1. AJAX 기본 개념 -->
+    <!-- ================================================================= -->
+    <h2>1. AJAX 기본 정의</h2>
+
+    <div class="box">
+      AJAX = Asynchronous JavaScript And XML<br />
+      XMLHttpRequest(XHR) 객체 + JS + DOM을 이용해<br />
+      <strong>페이지 전체 새로고침 없이 서버와 데이터 통신</strong>이
+      가능하다.<br />
+      ( PDF page 2–3 내용 기반 )
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 2. AJAX 동작 흐름도 -->
+    <!-- ================================================================= -->
+    <h2>2. AJAX 동작 흐름</h2>
+    <p>📌 이벤트 → XHR 생성 → 서버 요청 → 응답 수신 → DOM 업데이트</p>
+    <p>PDF page 4 참고 (브라우저 ↔ 서버 흐름도)</p>
+
+    <!-- ================================================================= -->
+    <!-- 3. 가장 기본적인 AJAX 예제 (ajax_info.txt 로딩) -->
+    <!-- ================================================================= -->
+    <h2>3. 가장 기본적인 AJAX 예제</h2>
+
+    <div id="basicDemo" class="box">
+      <h3>여기를 AJAX로 변경할 예정</h3>
+    </div>
+
+    <button onclick="loadBasic()">기본 AJAX 요청 실행</button>
+
+    <script>
+      function loadBasic() {
+        // 1. XHR 객체 생성
+        var xhttp = new XMLHttpRequest();
+
+        // 2. 응답을 처리하는 콜백 함수 설정
+        xhttp.onreadystatechange = function () {
+          // readyState == 4 : 요청/응답 과정 모두 완료
+          // status == 200 : 서버 응답 성공
+          if (this.readyState == 4 && this.status == 200) {
+            // 3. 응답 데이터를 DOM에 출력
+            document.getElementById("basicDemo").innerHTML = this.responseText;
+          }
+        };
+
+        // 4. GET 방식 요청 준비 (비동기 true)
+        xhttp.open("GET", "ajax_info.txt", true);
+
+        // 5. 요청 전송
+        xhttp.send();
+      }
+    </script>
+
+    <p>📌 ajax_info.txt 예시 파일 내용 (PDF page 8)</p>
+    <pre class="box">
+<h1>AJAX</h1>
+<p>AJAX is not a programming language.</p>
+<p>AJAX is a technique for accessing web servers from a web page.</p>
+<p>AJAX stands for Asynchronous JavaScript And XML.</p>
+</pre>
+
+    <!-- ================================================================= -->
+    <!-- 4. readyState / status 정리 -->
+    <!-- ================================================================= -->
+    <h2>4. readyState / status 정리</h2>
+
+    <div class="box">
+      <strong>readyState 값</strong> (PDF page 10)<br />
+      0 : 요청 준비 안됨<br />
+      1 : 서버 연결됨<br />
+      2 : 요청 수신됨<br />
+      3 : 요청 처리 중<br />
+      4 : 요청 처리 완료 + 응답 준비됨<br /><br />
+
+      <strong>status 값</strong><br />
+      200 : OK<br />
+      403 : Forbidden<br />
+      404 : Not Found<br />
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 5. XHR 메서드 정리 -->
+    <!-- ================================================================= -->
+    <h2>5. XHR 주요 메서드</h2>
+
+    <div class="box">
+      open(method, url, async)<br />
+      send()<br />
+      send(string) — POST 방식<br />
+      abort() — 요청 취소<br />
+      (PDF page 11)
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 6. GET / POST 차이 -->
+    <!-- ================================================================= -->
+    <h2>6. GET vs POST</h2>
+
+    <div class="box">
+      GET = 단순 조회, 빠름<br />
+      POST = 많은 데이터, 보안 필요, 캐시 사용 X<br />
+      (PDF page 12)
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 7. 동기식 요청 예제 (async=false) -->
+    <!-- ================================================================= -->
+    <h2>7. 동기식 요청 (async=false)</h2>
+
+    <button onclick="loadSync()">동기식 요청 실행</button>
+    <div id="syncDemo" class="box">동기식 응답이 여기에 표시됨</div>
+
+    <script>
+      function loadSync() {
+        var xhttp = new XMLHttpRequest();
+
+        // async=false → 요청 완료까지 JS 실행이 멈춤
+        xhttp.open("GET", "ajax_info.txt", false);
+        xhttp.send();
+
+        document.getElementById("syncDemo").innerHTML = xhttp.responseText;
+      }
+    </script>
+
+    <!-- ================================================================= -->
+    <!-- 8. XML 파싱하기 (responseXML) -->
+    <!-- ================================================================= -->
+    <h2>8. responseXML 사용 (XML 파싱)</h2>
+
+    <p>PDF page 14–17 예제 기반</p>
+
+    <button onclick="loadXML()">XML 로딩</button>
+    <div id="xmlResult" class="box">XML 데이터가 여기에 표시됨</div>
+
+    <script>
+      function loadXML() {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            // XML DOM 오브젝트
+            var xml = this.responseXML;
+
+            // ARTIST 태그 리스트 가져오기
+            var artists = xml.getElementsByTagName("ARTIST");
+
+            var txt = "<h3>Artist 목록</h3>";
+            for (var i = 0; i < artists.length; i++) {
+              txt += artists[i].childNodes[0].nodeValue + "<br>";
+            }
+
+            document.getElementById("xmlResult").innerHTML = txt;
+          }
+        };
+
+        xhttp.open("GET", "cd_catalog.xml", true);
+        xhttp.send();
+      }
+    </script>
+
+    <p class="box">
+      📌 cd_catalog.xml 형식 (PDF page 15–17)<br />
+      &lt;CD&gt;<br />
+      &nbsp;&nbsp;&lt;TITLE&gt;Empire Burlesque&lt;/TITLE&gt;<br />
+      &nbsp;&nbsp;&lt;ARTIST&gt;Bob Dylan&lt;/ARTIST&gt;<br />
+      &lt;/CD&gt;<br />
+    </p>
+
+    <!-- ================================================================= -->
+    <!-- 9. XML 전체 테이블로 출력하기 -->
+    <!-- ================================================================= -->
+    <h2>9. XML을 HTML 테이블 형태로 출력</h2>
+
+    <button onclick="loadXMLTable()">XML 테이블 로딩</button>
+    <div id="xmlTable" class="box"></div>
+
+    <script>
+      function loadXMLTable() {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            var xml = this.responseXML;
+            var cds = xml.getElementsByTagName("CD");
+
+            var table = "<table><tr><th>Title</th><th>Artist</th></tr>";
+
+            for (var i = 0; i < cds.length; i++) {
+              var title =
+                cds[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+              var artist =
+                cds[i].getElementsByTagName("ARTIST")[0].childNodes[0]
+                  .nodeValue;
+
+              table += "<tr><td>" + title + "</td><td>" + artist + "</td></tr>";
+            }
+
+            table += "</table>";
+
+            document.getElementById("xmlTable").innerHTML = table;
+          }
+        };
+
+        xhttp.open("GET", "cd_catalog.xml", true);
+        xhttp.send();
+      }
+    </script>
+
+    <!-- ================================================================= -->
+    <!-- END -->
+    <!-- ================================================================= -->
+  </body>
+</html>

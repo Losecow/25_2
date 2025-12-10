@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MainControl</title>
+    <style>
+      body {
+        font-family: Arial;
+        line-height: 1.7;
+      }
+      #hoverText {
+        transition: 0.2s;
+        display: inline-block;
+      }
+      #hoverBox {
+        width: 200px;
+        height: 80px;
+        background-color: yellow;
+        border: 2px solid blue;
+        padding: 20px;
+        margin-top: 20px;
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn {
+        font-size: 22px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+      }
+      #btn1 {
+        border: 2px dashed red;
+        color: blue;
+      }
+      #restoreBtn {
+        border: 2px solid blue;
+        color: green;
+      }
+      #ajaxArea {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #aaa;
+      }
+      .ajaxBtn {
+        font-size: 22px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+      }
+      #ajaxBtn1 {
+        border: 2px solid red;
+        color: purple;
+      }
+      #ajaxBtn2 {
+        border: 2px solid blue;
+        color: blue;
+      }
+      .divider {
+        border-top: 1px solid #ccc;
+        margin: 30px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript HTML Event Driven Program</h1>
+
+    <h2>The <span style="color: red">"onmouseover"</span> Event</h2>
+
+    <h2 id="hoverText" onmouseover="hoverEffect()" onmouseout="hoverRestore()">
+      Mouse over this text
+    </h2>
+    <div id="hoverBox">
+      <span style="font-style: italic; color: black">Hello JavaScript</span>
+    </div>
+
+    <h2>Mouse Click Event</h2>
+
+    <button id="btn1" class="btn" onclick="clickAction()">
+      the First Button
+    </button>
+    <button id="restoreBtn" class="btn" onclick="restoreAction()">
+      Restore
+    </button>
+
+    <h2 id="holdDownText" onclick="changeToThankYou()" style="cursor: pointer">
+      Hold down me!
+    </h2>
+
+    <h2
+      id="pressText"
+      onmousedown="pressAction()"
+      onmouseup="pressRestore()"
+      style="display: none"
+    >
+      Thank you
+    </h2>
+
+    <div class="divider"></div>
+
+    <button id="ajaxBtn1" class="ajaxBtn" onclick="loadRequest1()">
+      XMLHttpRequest for loading program 1
+    </button>
+    <button id="ajaxBtn2" class="ajaxBtn" onclick="loadRequest2()">
+      XMLHttpRequest for loading program 2
+    </button>
+
+    <div id="ajaxArea">AJAX Loaded Content Here</div>
+
+    <script>
+      function hoverEffect() {
+        const hoverBox = document.getElementById("hoverBox");
+        hoverBox.style.display = "flex";
+        hoverBox.style.alignItems = "center";
+        hoverBox.style.justifyContent = "center";
+      }
+
+      function hoverRestore() {
+        const hoverBox = document.getElementById("hoverBox");
+        hoverBox.style.display = "none";
+      }
+
+      function clickAction() {
+        const b = document.getElementById("btn1");
+        b.style.fontSize = "22px";
+        b.style.fontStyle = "italic";
+        b.style.border = "3px dashed red";
+        b.style.boxShadow = "3px 3px 5px gray";
+        b.innerHTML = "Hello JavaScript";
+      }
+
+      function restoreAction() {
+        const b = document.getElementById("btn1");
+        b.style.fontSize = "22px";
+        b.style.fontStyle = "";
+        b.style.border = "2px dashed red";
+        b.style.boxShadow = "";
+        b.style.color = "blue";
+        b.innerHTML = "the First Button";
+      }
+
+      function changeToThankYou() {
+        const holdDown = document.getElementById("holdDownText");
+        const pressText = document.getElementById("pressText");
+        holdDown.style.display = "none";
+        pressText.style.display = "block";
+        pressText.style.color = "purple";
+        pressText.style.backgroundColor = "pink";
+        pressText.style.fontSize = "24px";
+        pressText.style.fontStyle = "italic";
+        pressText.style.border = "2px solid purple";
+        pressText.style.padding = "10px";
+      }
+
+      function pressAction() {
+        const t = document.getElementById("pressText");
+        t.style.color = "purple";
+        t.style.backgroundColor = "pink";
+        t.style.fontSize = "24px";
+        t.style.fontStyle = "italic";
+        t.style.border = "2px solid purple";
+      }
+
+      function pressRestore() {
+        const t = document.getElementById("pressText");
+        t.style = "";
+      }
+
+      function loadRequest1() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("ajaxArea").innerHTML = this.responseText;
+          }
+        };
+        xhr.open("GET", "Request1.html", true);
+        xhr.send();
+      }
+
+      function loadRequest2() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("ajaxArea").innerHTML = this.responseText;
+          }
+        };
+        xhr.open("GET", "Request2.html", true);
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
