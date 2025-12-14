@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <p id="result">배열 내용:</p> -->
+
+    <table id="ta">
+      <tr>
+        <th>생선</th>
+        <th>가격</th>
+      </tr>
+    </table>
+
+    <script>
+      let arData = ["a", 1, "b", 2, "c", 3, "d", 4];
+      let result = "";
+
+      const pTag = document.getElementById("ta");
+
+      for (let i = 0; i < arData.length; i += 2) {
+        // result += arData[i] + ", ";
+        result += `<tr><td>${arData[i]}</td><td>${arData[i + 1]}</td></tr>`;
+      }
+
+      pTag.innerHTML += result;
+    </script>
+  </body>
+</html>

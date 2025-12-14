@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>구구단</h1>
+    <p id="gugudan">result</p>
+
+    <script>
+      let result = "";
+
+      let startNum = parseInt(prompt("INPUT start NUM"));
+      let endNUM = parseInt(prompt("INPUT end NUM"));
+      let temp = 0;
+
+      if (startNum > endNUM) {
+        temp = startNum;
+        startNum = endNUM;
+        endNUM = temp;
+      }
+
+      for (let i = startNum; i < endNUM + 1; i++) {
+        result += `${i}Dan<br>`;
+        for (let j = 1; j < 10; j++) {
+          result += `${i} * ${j} = ${i * j}<br>`;
+        }
+      }
+
+      document.getElementById("gugudan").innerHTML = result;
+    </script>
+  </body>
+</html>
