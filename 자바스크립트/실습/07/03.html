@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="num">Num:</h1>
+    <h1 id="result">Average:</h1>
+
+    <script>
+      const h1Input = document.getElementById("num");
+      const h1Result = document.getElementById("result");
+
+      function avgScore() {
+        let num1 = Number(prompt("first num: "));
+        let num2 = Number(prompt("second num: "));
+        let avg = (num1 + num2) / 2;
+
+        avg = Number(avg.toFixed(3));
+
+        return [num1, num2, avg];
+      }
+
+      function printAvg(fornum1, fornum2, result) {
+        h1Input.innerHTML = `Num: ${fornum1}, ${fornum2}`;
+        h1Result.innerHTML = `Average: ${result}`;
+      }
+
+      let [n1, n2, n3] = avgScore();
+      printAvg(n1, n2, n3);
+    </script>
+  </body>
+</html>

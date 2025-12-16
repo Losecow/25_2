@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="gogodan">result :</p>
+
+    <script>
+      const inputNum = document.getElementById("gogodan");
+
+      function inputTimes() {
+        while (1) {
+          let input = prompt("input num :");
+          if (input == "end") {
+            alert("good bye");
+            return;
+          } else {
+                if(Number(input) > 9 || Number(input) < 2) {
+                    alert("worng num");
+                } else {
+                    return input;
+          }
+        }
+
+        function printTimes(num) {
+          for (let i = 0; i < 10; i++) {
+            result = `${num} * ${i} = ${num * i}<br>`;
+          }
+
+          return result;
+        }
+
+        let tempnum = inputTimes();
+        printTimes(tempnum);
+      }
+    </script>
+  </body>
+</html>
