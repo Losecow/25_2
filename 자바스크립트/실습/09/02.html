@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    img {
+      width: 200px;
+      height: auto;
+      transition: all 1s;
+    }
+
+    .chwidth {
+      width: 300px;
+    }
+  </style>
+  <body>
+    <img id="imgRy" src="1.jpeg" alt="" />
+    <p id="pCon">put mouse over the GANADI</p>
+
+    <script>
+      const imgTag = document.getElementById("imgRy");
+      const pTag = document.getElementById("pCon");
+
+      imgTag.addEventListener("mouseover", () => {
+        imgTag.src = "5.jpeg";
+        imgTag.classList.add("chwidth");
+        pTag.innerText = "hug me";
+      });
+
+      imgTag.addEventListener("mouseout", () => {
+        imgTag.src = "1.jpeg";
+        imgTag.classList.remove("chwidth");
+        pTag.innerText = "hello";
+      });
+    </script>
+  </body>
+</html>

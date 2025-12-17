@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    p {
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+    .basic {
+      color: black;
+    }
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+    .colorful {
+      color: blue;
+      background-color: yellow;
+    }
+  </style>
+  <body>
+    <h2>classlist</h2>
+    <p id="text" class="basic">push the button to restyle message.</p>
+
+    <button id="btnBasic">Basic</button>
+    <button id="btnHighlight">Highlight</button>
+    <button id="btnColorful">Colorful</button>
+
+    <script>
+      const basicBtn = document.getElementById("btnBasic");
+      const highlightBtn = document.getElementById("btnHighlight");
+      const colorBtn = document.getElementById("btnColorful");
+      const pTag = document.getElementById("text");
+
+      basicBtn.addEventListener("click", () => {
+        pTag.classList.remove("highlight", "colorful");
+        pTag.classList.add("basic");
+      });
+
+      // 클릭 발생 -> highlight 의 click 이벤트 실행  ->
+      highlightBtn.addEventListener("click", () => {
+        // 얘네 실행
+        pTag.classList.remove("basic", "colorful");
+        pTag.classList.add("highlight");
+
+        // css 를 직접 바꾸는게 아닌 class 만 바꿈
+      });
+
+      // 이 함수는 직접 호출할 일이 없고, 오직 이벤트가 발생했을 때만 실행되기 때문에 이름 없는 함수(익명 함수)로 이벤트에 바로 넘긴 것
+      colorBtn.addEventListener("click", () => {
+        pTag.classList.remove("highlight", "basic");
+        pTag.classList.add("colorful");
+      });
+    </script>
+  </body>
+</html>
