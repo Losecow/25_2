@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form id="fruitForm">
+      <select id="fruit">
+        <option value="apple">apple</option>
+        <option value="apple">apple</option>
+        <option value="apple">apple</option>
+        <option value="apple">apple</option>
+        <option value="apple">apple</option>
+        <option value="apple">apple</option>
+        <option value="banana">banana</option>
+        <option value="water">water</option>
+      </select>
+      <button type="submit">confirm</button>
+    </form>
+
+    <p id="showFruit">favorite fruit</p>
+
+    <script>
+      const form = document.querySelector("#fruitForm");
+      const select = document.querySelector("#fruit");
+      const show = document.querySelector("#showFruit");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // 폼 제출시 자동 새로고침 막음
+
+        // show.textContent = `${select.value}`;
+
+        if (select.value == "apple") {
+          fruitName = "aaaa";
+        } else if (select.value == "banana") {
+          fruitName = "bbbb";
+        }
+
+        show.textContent = `${fruitName}`;
+      });
+
+      //   form.addEventListener("submit", function(e) {
+      //     e.preventDefault(); // 폼 제출시 자동 새로고침 막음
+
+      //     show.textContent = `${select.value}`;
+      //   });
+    </script>
+  </body>
+</html>
