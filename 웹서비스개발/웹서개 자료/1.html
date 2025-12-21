@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student DB</title>
+  </head>
+  <body>
+    <h1>Student DB</h1>
+
+    <h2>Departments Table</h2>
+    <form action="insert_departments.php" method="post">
+      <p>
+        <label for="dept_id">dept_id:</label>
+        <input type="text" id="dept_id" name="dept_id" required />
+      </p>
+      <p>
+        <label for="dept_name">dept_name:</label>
+        <input type="text" id="dept_name" name="dept_name" required />
+      </p>
+      <p>
+        <button type="submit">Insert into Departments</button>
+      </p>
+    </form>
+
+    <hr />
+
+    <h2>Students Table</h2>
+    <form action="insert_students.php" method="post">
+      <p>
+        <label for="student_id">student_id:</label>
+        <input type="text" id="student_id" name="student_id" required />
+      </p>
+      <p>
+        <label for="student_name">student_name:</label>
+        <input type="text" id="student_name" name="student_name" required />
+      </p>
+      <p>
+        <label for="student_dept_id">dept_id:</label>
+        <input type="text" id="student_dept_id" name="dept_id" required />
+      </p>
+      <p>
+        <button type="submit">Insert into Students</button>
+      </p>
+    </form>
+
+    <hr />
+
+    <h2>Grades Table</h2>
+    <form action="insert_grades.php" method="post">
+      <p>
+        <label for="grade_student_id">student_id:</label>
+        <input type="text" id="grade_student_id" name="student_id" required />
+      </p>
+      <p>
+        <label for="course_name">course_name:</label>
+        <input type="text" id="course_name" name="course_name" required />
+      </p>
+      <p>
+        <label for="score">score:</label>
+        <input
+          type="number"
+          id="score"
+          name="score"
+          min="0"
+          max="100"
+          required
+        />
+      </p>
+      <p>
+        <button type="submit">Insert into Grades</button>
+      </p>
+    </form>
+
+    <hr />
+
+    <h2>SQL JOIN Practice</h2>
+
+    <form action="join_all_students_departments.php" method="get">
+      <button type="submit">Show All Students and Departments</button>
+    </form>
+
+    <form action="join_students_score_ge_90.php" method="get">
+      <button type="submit">Show Students with Score &gt;= 90</button>
+    </form>
+
+    <form action="join_cs_students_score_ge_80.php" method="get">
+      <button type="submit">
+        Show Computer Science Students with Score &gt;= 80
+      </button>
+    </form>
+  </body>
+</html>
